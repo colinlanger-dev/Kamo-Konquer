@@ -2,15 +2,24 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    Rigidbody rb;
+    public Vector2 moveInput;
+    public float speed = 3;
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        float moveInputHor = Input.GetAxisRaw("Horizontal");
+        float moveInputVer = Input.GetAxisRaw("Vertical");
+
+        rb.linearVelocity = new Vector3(
+            moveInputHor*speed,
+            rb.linearVelocity.y,
+            moveInputVer*speed
+        );
     }
 }
