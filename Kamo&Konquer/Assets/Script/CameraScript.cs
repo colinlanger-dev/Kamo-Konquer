@@ -14,12 +14,12 @@ public class CameraScript : MonoBehaviour
     void Update()
     {
         float moveInputHor = Input.GetAxisRaw("Horizontal");
-        float moveInputVer = Input.GetAxisRaw("Vertikal");
+        float moveInputVer = Input.GetAxisRaw("Vertical");
 
         rb.linearVelocity = new Vector3(
-            moveInputHor,
+            moveInputHor*speed,
             rb.linearVelocity.y,
-            moveInputVer
+            moveInputVer*speed
         );
     }
 }
