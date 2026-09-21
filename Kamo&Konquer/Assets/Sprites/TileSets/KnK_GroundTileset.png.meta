@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -71,7 +71,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -101,7 +101,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86049b264408cb448bea32a6ccd4f5f4
-      internalID: -1718216424
+      spriteID: 3af9ad1ddab50144ab193b50d058bbe3
+      internalID: -450365707
       vertices: []
       indices: 
       edges: []
@@ -123,7 +123,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -134,8 +134,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5cfa175ed1f390e408f11948b14e719f
-      internalID: -518865305
+      spriteID: 96c692c0c0159a944b0b7a03c9629168
+      internalID: 285799521
       vertices: []
       indices: 
       edges: []
@@ -145,6 +145,50 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9ecfd2df58c7cf4581af450ac486f9d
+      internalID: -1524429834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnK_GroundTileset_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2779e7a1e640af14098bb70c4a57937d
+      internalID: 1069969744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnK_GroundTileset_4
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 32
         width: 16
         height: 16
@@ -156,52 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c8f0988c333c89469b37c0688f69564
-      internalID: -553075666
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KnK_GroundTileset_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3d9ef961ea93bfa40a9595786f308569
-      internalID: -1597076009
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KnK_GroundTileset_4
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb86fe59e3ac3874aa3e4e1b2fe4e3ed
-      internalID: -2048843051
+      spriteID: c1e6d7987812cc340bc87b3bdf779b12
+      internalID: -1139413458
       vertices: []
       indices: 
       edges: []
@@ -210,6 +210,116 @@ TextureImporter:
       name: KnK_GroundTileset_5
       rect:
         serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a35a28cb3fe1be444b580c34dcade4ab
+      internalID: -1813073240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnK_GroundTileset_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d36e944bfca624db91e034660938b0
+      internalID: 1701042678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnK_GroundTileset_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 694f0c4ac03c06f40ad45c8d1bddb475
+      internalID: -301277965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnK_GroundTileset_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e57d6392ff0320419ca71ed19253dd0
+      internalID: -1328286546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnK_GroundTileset_9
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b99f1222cedba6439e7456000d4aeca
+      internalID: -1907510752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnK_GroundTileset_10
+      rect:
+        serializedVersion: 2
         x: 32
         y: 16
         width: 16
@@ -222,14 +332,36 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5175351ca54fc4841bafaeea007604e1
-      internalID: 1683212646
+      spriteID: cbf30d3e815a81740b6d29d2cc2c2869
+      internalID: 1053093992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnK_GroundTileset_6
+      name: KnK_GroundTileset_11
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ca1a9cbbc4b14743a5fbfefc3353e02
+      internalID: -760236747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnK_GroundTileset_12
       rect:
         serializedVersion: 2
         x: 0
@@ -244,14 +376,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0be3c0d7ec08a074481a07ea83dbc395
-      internalID: -1223748862
+      spriteID: c0d37c83e86ee0442b71cd0a31b398b6
+      internalID: -2044509077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnK_GroundTileset_7
+      name: KnK_GroundTileset_13
       rect:
         serializedVersion: 2
         x: 16
@@ -266,14 +398,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bc19381b9510954ca5a32ba579f5245
-      internalID: -1042967366
+      spriteID: 1cf31373fe08ab349906dd917da80b4f
+      internalID: 622863120
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnK_GroundTileset_8
+      name: KnK_GroundTileset_14
       rect:
         serializedVersion: 2
         x: 32
@@ -288,8 +420,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d64c0b48cc96c774db243bf34df8e0c1
-      internalID: 1021265880
+      spriteID: 07a04234cab4ab146863c7580c8e9490
+      internalID: 71415586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnK_GroundTileset_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f246ec743e3c814c954ff4330984766
+      internalID: -268288932
       vertices: []
       indices: 
       edges: []
@@ -298,7 +452,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d168e5088046d6441974769fc474b98d
+    spriteID: fd4168a2bb2217a4185466201f3c91e7
     internalID: 0
     vertices: []
     indices: 
@@ -307,20 +461,25 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries:
-      - key: SpriteEditor.SliceOnImport
-        value: False
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      KnK_GroundTileset_0: -1718216424
-      KnK_GroundTileset_1: -518865305
-      KnK_GroundTileset_2: -553075666
-      KnK_GroundTileset_3: -1597076009
-      KnK_GroundTileset_4: -2048843051
-      KnK_GroundTileset_5: 1683212646
-      KnK_GroundTileset_6: -1223748862
-      KnK_GroundTileset_7: -1042967366
-      KnK_GroundTileset_8: 1021265880
+      KnK_GroundTileset_0: -450365707
+      KnK_GroundTileset_1: 285799521
+      KnK_GroundTileset_10: 1053093992
+      KnK_GroundTileset_11: -760236747
+      KnK_GroundTileset_12: -2044509077
+      KnK_GroundTileset_13: 622863120
+      KnK_GroundTileset_14: 71415586
+      KnK_GroundTileset_15: -268288932
+      KnK_GroundTileset_2: -1524429834
+      KnK_GroundTileset_3: 1069969744
+      KnK_GroundTileset_4: -1139413458
+      KnK_GroundTileset_5: -1813073240
+      KnK_GroundTileset_6: 1701042678
+      KnK_GroundTileset_7: -301277965
+      KnK_GroundTileset_8: -1328286546
+      KnK_GroundTileset_9: -1907510752
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
