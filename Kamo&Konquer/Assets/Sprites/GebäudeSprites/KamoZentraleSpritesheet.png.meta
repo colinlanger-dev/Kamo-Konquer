@@ -70,7 +70,7 @@ TextureImporter:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -102,7 +102,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1
         y: 470
-        width: 49
+        width: 50
         height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -123,8 +123,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 440
-        width: 49
+        y: 430
+        width: 50
         height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -145,8 +145,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 408
-        width: 49
+        y: 388
+        width: 50
         height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -167,8 +167,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 376
-        width: 49
+        y: 346
+        width: 50
         height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -188,7 +188,7 @@ TextureImporter:
       name: KamoZentrale_2
       rect:
         serializedVersion: 2
-        x: 53
+        x: 63
         y: 470
         width: 50
         height: 30
@@ -210,7 +210,7 @@ TextureImporter:
       name: KamoZentrale_3
       rect:
         serializedVersion: 2
-        x: 106
+        x: 126
         y: 470
         width: 50
         height: 30
@@ -232,8 +232,8 @@ TextureImporter:
       name: "KamoZentrale_Gr\xFCn_2"
       rect:
         serializedVersion: 2
-        x: 53
-        y: 440
+        x: 63
+        y: 430
         width: 50
         height: 29
       alignment: 0
@@ -254,8 +254,8 @@ TextureImporter:
       name: KamoZentrale_Blau_2
       rect:
         serializedVersion: 2
-        x: 53
-        y: 408
+        x: 63
+        y: 388
         width: 50
         height: 29
       alignment: 0
@@ -276,8 +276,8 @@ TextureImporter:
       name: KamoZentrale_Rot_2
       rect:
         serializedVersion: 2
-        x: 53
-        y: 376
+        x: 63
+        y: 346
         width: 50
         height: 29
       alignment: 0
