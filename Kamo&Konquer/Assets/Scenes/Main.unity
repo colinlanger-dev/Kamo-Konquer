@@ -712,7 +712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5698112, g: 0.5450836, b: 0.5450836, a: 1}
+  m_Color: {r: 0.4037736, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -750,7 +750,6 @@ GameObject:
   - component: {fileID: 957744188}
   - component: {fileID: 957744187}
   - component: {fileID: 957744186}
-  - component: {fileID: 957744191}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -770,7 +769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d0a005d240bab4da84c2ac343245ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
-  buildButton: {fileID: 0}
+  buildButton: {fileID: 1050914314}
   placement: {fileID: 984625299}
 --- !u!114 &957744187
 MonoBehaviour:
@@ -858,23 +857,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &957744191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957744185}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9454dc43c7022b4cab84afe1bea3c4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  buildingsPanel: {fileID: 1986165470}
-  unitsPanel: {fileID: 118199939}
-  buildingButton: {fileID: 1050914314}
-  unitsButton: {fileID: 1026508263}
-  placementSystem: {fileID: 984625299}
 --- !u!1001 &984625298
 PrefabInstance:
   m_ObjectHideFlags: 0
