@@ -5,13 +5,13 @@ public class UnitScript : MonoBehaviour
     
     void Start()
     {
-        UnitSelectionManager.instance.allUnitsList.Add(gameObject);
+        UnitSelectionManager.Instance.allUnitsList.Add(gameObject);
 
     }
 
     private void OnDestroy()
     {
-        UnitSelectionManager.instance.allUnitsList.Remove(gameObject);
+        UnitSelectionManager.Instance.allUnitsList.Remove(gameObject);
     }
 
 

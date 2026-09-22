@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class UnitSelectionManager : MonoBehaviour
 {
-    public static UnitSelectionManager instance {  get; set; }
+    public static UnitSelectionManager Instance {  get; set; }
 
     public List<GameObject> allUnitsList = new List<GameObject>();
     public List<GameObject> unitsSelected = new List<GameObject>();
@@ -20,9 +20,9 @@ public class UnitSelectionManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null )
+        if(Instance == null )
         {
-            instance = this;
+            Instance = this;
         }
         else
         {
@@ -36,8 +36,9 @@ public class UnitSelectionManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
+            
             RaycastHit hit;
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, clickable))
@@ -62,7 +63,7 @@ public class UnitSelectionManager : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButtonDown(1))
         {
             RaycastHit hit;
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -95,6 +96,8 @@ public class UnitSelectionManager : MonoBehaviour
 
         unitsSelected.Clear();
     }
+
+    
 
     private void SelectByClicking(GameObject unit)
     {
@@ -132,4 +135,15 @@ public class UnitSelectionManager : MonoBehaviour
     {
         unit.transform.Find("Indicator").gameObject.SetActive(isVisable);
     }
+
+    public void DragSelect(GameObject unit)
+    {
+        if(!unitsSelected.Contains(unit))
+        {
+            unitsSelected.Add(unit);
+            TriggerSelectorIndicator(unit, true);
+            EnableUnitMovement(unit, true);
+        }
+    }
+
 }
