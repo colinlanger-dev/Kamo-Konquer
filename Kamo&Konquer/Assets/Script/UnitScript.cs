@@ -1,17 +1,22 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class UnitScript : MonoBehaviour
 {
+    NavMeshAgent agent;
     
     void Start()
     {
-        UnitSelectionManager.instance.allUnitsList.Add(gameObject);
+        UnitSelectionManager.Instance.allUnitsList.Add(gameObject);
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+
 
     }
 
     private void OnDestroy()
     {
-        UnitSelectionManager.instance.allUnitsList.Remove(gameObject);
+        UnitSelectionManager.Instance.allUnitsList.Remove(gameObject);
     }
 
 
