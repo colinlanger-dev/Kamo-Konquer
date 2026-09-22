@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class UnitsScript : MonoBehaviour
+public class UnitMovementScript : MonoBehaviour
 {
     Camera cam;
     NavMeshAgent agent;
