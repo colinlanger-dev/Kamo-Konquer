@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static ResourceManager;
 
 [CreateAssetMenu]
 public class ObjectsDatabseSO : ScriptableObject
@@ -54,7 +55,7 @@ public class ObjectData
 [System.Serializable]
 public class BuildRequirement
 {
-    public string resource;
+    public ResourceManager.ResourcesType resource;
     public int amount;
 }
 

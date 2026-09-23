@@ -1042,6 +1042,754 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: KamoArbeiter
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 706
+        width: 5
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab25072d51945934b92ab36ae8621d83
+      internalID: 1221321518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoArbeiter_Fire_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 689
+        width: 5
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fa88b9c3a934b546884f255b7dcf35d
+      internalID: -718417720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoArbeiter_Fire_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 689
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 406652a2a37d9ea4e9d504af16d7a88f
+      internalID: 1778480745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoArbeiter_Fire_3
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 689
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdca94c9c94974a478d8397ecd32902c
+      internalID: -514216984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoArbeiter_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 673
+        width: 5
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1244958b974da1844bcc35da96ed57e0
+      internalID: 2128010073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoArbeiter_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 673
+        width: 5
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b61807f71aad34680419adb52f9bdd
+      internalID: -449058206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoArbeiter_Die_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 654
+        width: 5
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c729f571fca7f014c866fa40dbba40c8
+      internalID: 1612220818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoArbeiter_Die_2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 654
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ed7b52de01cbd8419a021ee9845b010
+      internalID: -1296256174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoArbeiter_Die_3
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 654
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebbf13cbd9259bd45ba90978bcd7be05
+      internalID: 35797129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoArbeiter_Die_4
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 654
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef6731500f1c4ca4ebb1e928113ea856
+      internalID: -1165900751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoArbeiter_Dead
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 646
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc0e4cb9bdbfae4792ec25b7c45b6c0
+      internalID: -1550926401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoCar
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 699
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d65115a64b70a5c4daf54b5169eaa91c
+      internalID: 434350770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoCar_Walk
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 686
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc692e70a7a0874daabdca5b4635256
+      internalID: 481618726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoCar_Fire
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 673
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1398d87fbeb99ee43993854b7e12d95f
+      internalID: 1987236686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoCar_Die
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 660
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96dd00afc8db1d1479e23c28842768f2
+      internalID: -1764396510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoKommander
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 632
+        width: 4
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 227a19ee4e4baa1428d26aa232182979
+      internalID: -389438633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoKommander_Fire_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 616
+        width: 5
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b756e4f05c352394fb1009969a8cb799
+      internalID: 987929088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoKommander_Fire_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 616
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbf27ff683e12e7449ca9c11533e0a03
+      internalID: -848280214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoKommander_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 600
+        width: 5
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82ca4e7a6be42bd44b4222661edaf49c
+      internalID: -941155317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoKommander_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 600
+        width: 4
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f456224e167305458f192cdf2ee1a1a
+      internalID: 347044651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoKommander_Die_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 583
+        width: 4
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac81d05d23e4e044ab228f14b1adc38f
+      internalID: 2095952793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoKommander_Die_2
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 583
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06afeaf47061cf74ca1d49b5634c7f42
+      internalID: -1644093155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoKommander_Die_3
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 583
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7819c69300e81e14caf7ed468dc77246
+      internalID: -1874377905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoKommander_Die_4
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 583
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f445f7b254a82574a98c22f12ca8d349
+      internalID: -646221242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoKrieger
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 626
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f96e8a7ec677d5e4cab4edf6bcb763a1
+      internalID: 2058728728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoKrieger_Fire_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 608
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90c6b892e3323cb4386d9839ae52dd35
+      internalID: -2124230090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoKrieger_Fire_2
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 608
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7092b56fec0cb05458ee786b97bc7b2d
+      internalID: 1850561405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoKrieger_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 589
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 603fe6f586347a54fbbeaf4eed43a525
+      internalID: -1335268541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoKrieger_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 589
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e003f183b94e43479ed18be615d8742
+      internalID: -1451488639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoKrieger_Die_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 571
+        width: 5
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f327a09dfd7d74c4bb532661f041a0a1
+      internalID: 1349047956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoKrieger_Die_2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 571
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 539c45e55106a4e40b9052ded6308f92
+      internalID: -1134175879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoKrieger_Die_3
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 571
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e3d0ebc3c2835419812c6de722ef45
+      internalID: -554815597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoKrieger_Die_4
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 571
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad7cc9a396f4beb47b8a9de390dda507
+      internalID: -934624927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KamoKrieger_Dead_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 560
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3365b2adcd960224dbc678977d1de8e8
+      internalID: -1862280419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1065,6 +1813,40 @@ TextureImporter:
       Airship_Die_2: -1603164706
       Airship_Die_3: -375723819
       Airship_Fly: -1895763762
+      KamoArbeiter: 1221321518
+      KamoArbeiter_Dead: -1550926401
+      KamoArbeiter_Die_1: 1612220818
+      KamoArbeiter_Die_2: -1296256174
+      KamoArbeiter_Die_3: 35797129
+      KamoArbeiter_Die_4: -1165900751
+      KamoArbeiter_Fire_1: -718417720
+      KamoArbeiter_Fire_2: 1778480745
+      KamoArbeiter_Fire_3: -514216984
+      KamoArbeiter_Walk_1: 2128010073
+      KamoArbeiter_Walk_2: -449058206
+      KamoCar: 434350770
+      KamoCar_Die: -1764396510
+      KamoCar_Fire: 1987236686
+      KamoCar_Walk: 481618726
+      KamoKommander: -389438633
+      KamoKommander_Die_1: 2095952793
+      KamoKommander_Die_2: -1644093155
+      KamoKommander_Die_3: -1874377905
+      KamoKommander_Die_4: -646221242
+      KamoKommander_Fire_1: 987929088
+      KamoKommander_Fire_2: -848280214
+      KamoKommander_Walk_1: -941155317
+      KamoKommander_Walk_2: 347044651
+      KamoKrieger: 2058728728
+      KamoKrieger_Dead_4: -1862280419
+      KamoKrieger_Die_1: 1349047956
+      KamoKrieger_Die_2: -1134175879
+      KamoKrieger_Die_3: -554815597
+      KamoKrieger_Die_4: -934624927
+      KamoKrieger_Fire_1: -2124230090
+      KamoKrieger_Fire_2: 1850561405
+      KamoKrieger_Walk_1: -1335268541
+      KamoKrieger_Walk_2: -1451488639
       Minigun: 1132203373
       Minigun_Dead: 51726187
       Minigun_Die_1: -2068680228

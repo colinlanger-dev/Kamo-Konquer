@@ -8,7 +8,7 @@ public class BuySlot : MonoBehaviour
     public Sprite unAvailableSprite;
 
 
-    public bool isAvailable;
+    private bool isAvailable;
 
     public BuySystem buySystem;
 
@@ -16,7 +16,17 @@ public class BuySlot : MonoBehaviour
 
     private void Start()
     {
-        UpdateAvailabilityUI();
+        HandleResourcesChanged();
+    }
+
+    private void OnEnable()
+    {
+        ResourceManager.Instance.OnResourceChanged += HandleResourcesChanged;
+    }
+
+    private void OnDisable()
+    {
+        ResourceManager.Instance.OnResourceChanged -= HandleResourcesChanged;
     }
 
     public void ClickedOnSlots()
@@ -40,5 +50,24 @@ public class BuySlot : MonoBehaviour
             GetComponent<Image>().sprite = unAvailableSprite;
             GetComponent<Button>().interactable = false;
         }
+    }
+    private void HandleResourcesChanged()
+    {
+        ObjectData objectData = DatabaseManager.Instance.databaseSO.objectsData[databaseItemID];
+
+        bool requiremtMet = true;
+
+        foreach (BuildRequirement req in objectData.requirements)
+        {
+            if (ResourceManager.Instance.GetResourceAmount(req.resource) < req.amount)
+            {
+                requiremtMet = false;
+                break;
+            }
+        }
+
+        isAvailable = requiremtMet;
+
+        UpdateAvailabilityUI();
     }
 }
