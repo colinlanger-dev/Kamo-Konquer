@@ -19,6 +19,16 @@ public class BuySlot : MonoBehaviour
         HandleResourcesChanged();
     }
 
+    private void OnEnable()
+    {
+        ResourceManager.Instance.OnResourceChanged += HandleResourcesChanged;
+    }
+
+    private void OnDisable()
+    {
+        ResourceManager.Instance.OnResourceChanged -= HandleResourcesChanged;
+    }
+
     public void ClickedOnSlots()
     {
         if (isAvailable)
@@ -41,18 +51,6 @@ public class BuySlot : MonoBehaviour
             GetComponent<Button>().interactable = false;
         }
     }
-
-
-    private void OnEnable()
-    {
-        ResourceManager.Instance.OnResourceChanged += HandleResourcesChanged;
-    }
-
-    private void OnDisable()
-    {
-        ResourceManager.Instance.OnResourceChanged -= HandleResourcesChanged;
-    }
-
     private void HandleResourcesChanged()
     {
         ObjectData objectData = DatabaseManager.Instance.databaseSO.objectsData[databaseItemID];
@@ -61,7 +59,7 @@ public class BuySlot : MonoBehaviour
 
         foreach (BuildRequirement req in objectData.requirements)
         {
-            if (ResourceManager.Instance.GetResourceAmmount(req.resource) < req.amount)
+            if (ResourceManager.Instance.GetResourceAmount(req.resource) < req.amount)
             {
                 requiremtMet = false;
                 break;

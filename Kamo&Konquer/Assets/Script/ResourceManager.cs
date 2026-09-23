@@ -19,9 +19,9 @@ public class ResourceManager : MonoBehaviour
 
     }
 
-    public int credits = 150;
+    public int credits = 300;
 
-    public event Action OnResourceChanged;
+    public event Action  OnResourceChanged;
 
     public TextMeshProUGUI GlaubeUI;
 
@@ -33,6 +33,11 @@ public class ResourceManager : MonoBehaviour
     private void Start()
     {
         UpdateUI();
+    }
+
+    public int GetCredit()
+    {
+        return credits;
     }
 
     public void IncreaseResource(ResourcesType resource, int amountToIncrease)
@@ -64,12 +69,7 @@ public class ResourceManager : MonoBehaviour
     }
 
 
-    private void UpdateUI()
-    {
-        GlaubeUI.text = $"{credits}";
-    }
-
-    internal int GetResourceAmmount(ResourcesType resource)
+    internal int GetResourceAmount(ResourcesType resource)
     {
         switch (resource)
         {
@@ -88,6 +88,12 @@ public class ResourceManager : MonoBehaviour
             DecreaseResource(req.resource, req.amount);
         }
     }
+
+    private void UpdateUI()
+    {
+        GlaubeUI.text = $"{credits}";
+    }
+
     private void OnEnable()
     {
         OnResourceChanged += UpdateUI;

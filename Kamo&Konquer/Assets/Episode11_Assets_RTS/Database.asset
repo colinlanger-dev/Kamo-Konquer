@@ -25,7 +25,7 @@ MonoBehaviour:
   - <Name>k__BackingField: Kaserne
     <ID>k__BackingField: 1
     description: 
-    <Size>k__BackingField: {x: 1, y: 1}
+    <Size>k__BackingField: {x: 3, y: 3}
     <Prefab>k__BackingField: {fileID: 1555125030896941773, guid: 4ecbe2fed31bb3544a27fd4a98b10fcc, type: 3}
     <requirements>k__BackingField: []
     <benefits>k__BackingField: []
