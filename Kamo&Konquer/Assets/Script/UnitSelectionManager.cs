@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
-using static UnityEngine.GraphicsBuffer;
 
 public class UnitSelectionManager : MonoBehaviour
 {
@@ -15,8 +14,6 @@ public class UnitSelectionManager : MonoBehaviour
     public LayerMask ground;
     public GameObject groundMarker;
 
-    public LayerMask attackable;
-    public bool attackCursorVisible;
     
 
     private Camera cam;
@@ -72,62 +69,28 @@ public class UnitSelectionManager : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
             {
+                
+              
                     
                     groundMarker.transform.position = hit.point;
 
                     groundMarker.SetActive(false);
                     groundMarker.SetActive(true);
-            }
-        }
 
-        if (unitsSelected.Count > 0 && AtleastOneOffensiveUnit(unitsSelected))
-        {
-            RaycastHit hit;
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
-
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, attackable))
-            {
-                Debug.Log("Enemy Hovered with mouse");
-
-                attackCursorVisible = true;
-
-                if(Input.GetMouseButtonDown(1)) 
-                {
-                    Transform target = hit.transform;
-
-                    foreach (GameObject unit in unitsSelected)
-                    {
-                        if(unit.GetComponent<AttackControlerScript>())
-                        {
-                            unit.GetComponent<AttackControlerScript>().targetToAttack = target;
-                        }
-                    }
-                }
-
+             
                 
+
             }
         }
     }
 
-    private bool AtleastOneOffensiveUnit(List<GameObject> unitsSelected)
-    {
-        foreach (GameObject unit in unitsSelected)
-        {
-            if (unit.GetComponent<AttackControlerScript>())
-            {
-                return true;
-            }
-        }
-        return false;
-    }
+    
 
-    private void DeselectAll()
+    public void DeselectAll()
     {
         foreach (var unit in unitsSelected) 
         {
-            EnableUnitMovement(unit, false);
-            TriggerSelectorIndicator(unit,false);
+            SelectUnit(unit, false);
         }
 
         unitsSelected.Clear();
@@ -140,9 +103,7 @@ public class UnitSelectionManager : MonoBehaviour
         DeselectAll();
         
         unitsSelected.Add(unit);
-        TriggerSelectorIndicator(unit, true);
-
-        EnableUnitMovement(unit, true);
+        SelectUnit(unit, true);
     }
 
     private void EnableUnitMovement(GameObject unit, bool enabled)
@@ -154,14 +115,12 @@ public class UnitSelectionManager : MonoBehaviour
         if(!unitsSelected.Contains(unit))
         {
             unitsSelected.Add(unit);
-            TriggerSelectorIndicator(unit, true);
-            EnableUnitMovement(unit, true);
+            SelectUnit(unit, true);
 
         }
         else
         {
-            EnableUnitMovement(unit, false);
-            TriggerSelectorIndicator(unit, false);
+            SelectUnit(unit, false);
             unitsSelected.Remove(unit);
             
         }
@@ -177,9 +136,14 @@ public class UnitSelectionManager : MonoBehaviour
         if(!unitsSelected.Contains(unit))
         {
             unitsSelected.Add(unit);
-            TriggerSelectorIndicator(unit, true);
-            EnableUnitMovement(unit, true);
+            SelectUnit( unit, true);
         }
+    }
+
+    private void SelectUnit(GameObject unit, bool isSelected)
+    {
+        TriggerSelectorIndicator(unit, isSelected);
+        EnableUnitMovement(unit, isSelected);
     }
 
 }
