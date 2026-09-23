@@ -277,6 +277,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TankUnit
       objectReference: {fileID: 0}
+    - target: {fileID: 579434544268795065, guid: dea3ca204f462ac42bbf3dbea2f5e22a, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166702368619046758, guid: dea3ca204f462ac42bbf3dbea2f5e22a, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3066865700360413406, guid: dea3ca204f462ac42bbf3dbea2f5e22a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.2
@@ -316,6 +324,10 @@ PrefabInstance:
     - target: {fileID: 3066865700360413406, guid: dea3ca204f462ac42bbf3dbea2f5e22a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3845124792042492055, guid: dea3ca204f462ac42bbf3dbea2f5e22a, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1302,10 +1314,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   groundMarker: {fileID: 1491636137}
-  attackable:
-    serializedVersion: 2
-    m_Bits: 128
-  attackCursorVisible: 0
 --- !u!4 &1945597979
 Transform:
   m_ObjectHideFlags: 0
