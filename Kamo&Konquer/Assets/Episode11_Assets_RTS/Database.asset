@@ -18,7 +18,9 @@ MonoBehaviour:
     description: 
     <Size>k__BackingField: {x: 1, y: 1}
     <Prefab>k__BackingField: {fileID: 7504205802836147159, guid: 033031a8d2cc0114baebec7a7d964ca4, type: 3}
-    <requirements>k__BackingField: []
+    <requirements>k__BackingField:
+    - resource: 0
+      amount: 150
     <benefits>k__BackingField: []
   - <Name>k__BackingField: Kaserne
     <ID>k__BackingField: 1
