@@ -8,6 +8,7 @@ public class UnitMovementScript : MonoBehaviour
     public LayerMask ground;
     public LayerMask Enemy;
     AttackControlerScript attackControler;
+    public bool CommandedToMove;
     
 
     void Start()
@@ -26,9 +27,15 @@ public class UnitMovementScript : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             if(Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
             {
+                CommandedToMove = true;
                 agent.SetDestination(hit.point);
                 
             }
+        }
+
+        if (agent.hasPath == false || agent.remainingDistance <= agent.stoppingDistance)
+        {
+            CommandedToMove = false;
         }
     }
 }

@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: -1630810173563176664}
   m_Layer: 9
   m_Name: MinigunUnit
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -237,6 +237,7 @@ MonoBehaviour:
   Enemy:
     serializedVersion: 2
     m_Bits: 0
+  CommandedToMove: 0
 --- !u!114 &7417650772644545410
 MonoBehaviour:
   m_ObjectHideFlags: 0
