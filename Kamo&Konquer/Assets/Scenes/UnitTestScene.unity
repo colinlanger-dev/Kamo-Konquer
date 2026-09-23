@@ -737,7 +737,7 @@ GameObject:
   - component: {fileID: 1201127168}
   m_Layer: 7
   m_Name: testEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1314,6 +1314,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   groundMarker: {fileID: 1491636137}
+  attackable:
+    serializedVersion: 2
+    m_Bits: 128
+  attackCursorVisible: 0
 --- !u!4 &1945597979
 Transform:
   m_ObjectHideFlags: 0
