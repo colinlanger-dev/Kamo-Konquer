@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 6753651}
   - component: {fileID: 6753650}
   - component: {fileID: 6753649}
+  - component: {fileID: 6753652}
   m_Layer: 9
   m_Name: Unit Test
   m_TagString: Untagged
@@ -147,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 6753647}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.29, z: 0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -204,6 +205,27 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &6753652
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6753647}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0954707, y: 1, z: 3.842384}
+  m_Center: {x: -0.06755033, y: 0, z: 0.08517611}
 --- !u!1 &39263136 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1780618433157276893, guid: 2b4dbfabf63d5674b81430e62053d1c0, type: 3}
@@ -508,7 +530,7 @@ SpriteRenderer:
   m_Size: {x: 0.4375, y: 0.875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
 --- !u!1 &319124492 stripped
 GameObject:
@@ -859,6 +881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1179791713}
   - component: {fileID: 1179791714}
+  - component: {fileID: 1179791715}
   m_Layer: 0
   m_Name: KamoPanzer
   m_TagString: Untagged
@@ -875,7 +898,7 @@ Transform:
   m_GameObject: {fileID: 1179791712}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.52, z: 0.03}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -940,6 +963,27 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &1179791715
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179791712}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0625, y: 1.0000002, z: 0.20000005}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1359239212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1713,6 +1757,7 @@ GameObject:
   - component: {fileID: 1718642996}
   - component: {fileID: 1718642995}
   - component: {fileID: 1718642994}
+  - component: {fileID: 1718642998}
   m_Layer: 9
   m_Name: Unit Test (1)
   m_TagString: Untagged
@@ -1778,7 +1823,7 @@ Transform:
   m_GameObject: {fileID: 1718642993}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.38, y: -0, z: 0}
+  m_LocalPosition: {x: 5.38, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1786,6 +1831,27 @@ Transform:
   - {fileID: 1440344395}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1718642998
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718642993}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.256321, y: 1, z: 4.1686068}
+  m_Center: {x: 0.029554844, y: 0, z: -0.012265682}
 --- !u!1 &1869319715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,6 +1864,7 @@ GameObject:
   - component: {fileID: 1869319718}
   - component: {fileID: 1869319717}
   - component: {fileID: 1869319716}
+  - component: {fileID: 1869319720}
   m_Layer: 9
   m_Name: Unit Test (2)
   m_TagString: Untagged
@@ -1871,6 +1938,27 @@ Transform:
   - {fileID: 1179791713}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1869319720
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869319715}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.8472643, y: 1, z: 4.868868}
+  m_Center: {x: 0.13304281, y: 0, z: 0.16089678}
 --- !u!1 &1945597977
 GameObject:
   m_ObjectHideFlags: 0
