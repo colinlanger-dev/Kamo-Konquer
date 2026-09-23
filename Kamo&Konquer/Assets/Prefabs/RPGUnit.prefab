@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: -7363752826410288057}
   m_Layer: 9
   m_Name: RPGUnit
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,6 +182,7 @@ MonoBehaviour:
   Enemy:
     serializedVersion: 2
     m_Bits: 0
+  CommandedToMove: 0
 --- !u!114 &7523753213462488543
 MonoBehaviour:
   m_ObjectHideFlags: 0
