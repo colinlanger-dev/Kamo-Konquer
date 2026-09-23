@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEngine.GraphicsBuffer;
 
 public class UnitSelectionManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class UnitSelectionManager : MonoBehaviour
     public LayerMask ground;
     public GameObject groundMarker;
 
+    public LayerMask attackable;
+    public bool attackCursorVisible;
     
 
     private Camera cam;
@@ -69,22 +72,55 @@ public class UnitSelectionManager : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
             {
-                
-              
                     
                     groundMarker.transform.position = hit.point;
 
                     groundMarker.SetActive(false);
                     groundMarker.SetActive(true);
+            }
+        }
 
-             
+        if (unitsSelected.Count > 0 && AtleastOneOffensiveUnit(unitsSelected))
+        {
+            RaycastHit hit;
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+
+
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, attackable))
+            {
+                Debug.Log("Enemy Hovered with mouse");
+
+                attackCursorVisible = true;
+
+                if(Input.GetMouseButtonDown(1)) 
+                {
+                    Transform target = hit.transform;
+
+                    foreach (GameObject unit in unitsSelected)
+                    {
+                        if(unit.GetComponent<AttackControlerScript>())
+                        {
+                            unit.GetComponent<AttackControlerScript>().targetToAttack = target;
+                        }
+                    }
+                }
+
                 
-
             }
         }
     }
 
-    
+    private bool AtleastOneOffensiveUnit(List<GameObject> unitsSelected)
+    {
+        foreach (GameObject unit in unitsSelected)
+        {
+            if (unit.GetComponent<AttackControlerScript>())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     private void DeselectAll()
     {
