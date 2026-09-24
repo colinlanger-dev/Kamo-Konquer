@@ -54,6 +54,8 @@ public class RemovingState : IBuildingState
         }
         Vector3 cellposition = grid.CellToWorld(gridPosition);
         previewSystem.UpdatePosition(cellposition, CheckIfSelectionIsValid(gridPosition));
+
+        
     }
 
     private bool CheckIfSelectionIsValid(Vector3Int gridPosition)

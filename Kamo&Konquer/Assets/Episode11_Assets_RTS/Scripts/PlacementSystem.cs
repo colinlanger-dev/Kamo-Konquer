@@ -38,7 +38,6 @@ public class PlacementSystem : MonoBehaviour
 
         Debug.Log("Placement ID: " + ID);
 
-
         StopPlacement();
 
         buildingState = new PlacementState(ID, grid, previewSystem, database, floorData, furnitureData, objectPlacer);
@@ -59,7 +58,8 @@ public class PlacementSystem : MonoBehaviour
 
     private void PlaceStructure()
     {
-        if(inputManager.IsPointerOverUI()){
+        if (inputManager.IsPointerOverUI())
+        {
             Debug.Log("Pointer was over UI - Returned");
             return;
         }
@@ -69,10 +69,9 @@ public class PlacementSystem : MonoBehaviour
 
         buildingState.OnAction(gridPosition);
 
-
         // ---- Using the ID remove used resources from resource manager ---- // 
         ObjectData ob = database.GetObjectByID(selectedID);
-       // ResourceManager.Instance.RemoveResourcesBasedOnRequirements(ob, database);
+        // ResourceManager.Instance.RemoveResourcesBasedOnRequirements(ob, database);
 
         // ---- Add Buildable Benifits ---- // 
         foreach (BuildBenefits bf in ob.benefits)
@@ -89,7 +88,7 @@ public class PlacementSystem : MonoBehaviour
         switch (bf.benefitType)
         {
             case BuildBenefits.BenefitType.Housing:
-             //   StatusManager.Instance.IncreaseHousing(bf.benefitAmount);
+                //   StatusManager.Instance.IncreaseHousing(bf.benefitAmount);
                 break;
         }
     }
@@ -98,7 +97,7 @@ public class PlacementSystem : MonoBehaviour
     {
         if (buildingState == null)
             return;
-       
+
         buildingState.EndState();
 
         inputManager.OnClicked -= PlaceStructure;
@@ -115,7 +114,7 @@ public class PlacementSystem : MonoBehaviour
         // So there is no need to show cell indicator
         if (buildingState == null)
             return;
-      
+
         Vector3 mousePosition = inputManager.GetSelectedMapPosition();
         Vector3Int gridPosition = grid.WorldToCell(mousePosition);
 

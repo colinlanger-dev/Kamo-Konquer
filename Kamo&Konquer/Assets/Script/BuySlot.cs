@@ -8,7 +8,7 @@ public class BuySlot : MonoBehaviour
     public Sprite unAvailableSprite;
 
 
-    private bool isAvailable;
+    public bool isAvailable;
 
     public BuySystem buySystem;
 
@@ -31,6 +31,7 @@ public class BuySlot : MonoBehaviour
 
     public void ClickedOnSlots()
     {
+        Debug.Log($"Slot {databaseItemID} geklickt, verfügbar: {isAvailable}");
         if (isAvailable)
         {
             buySystem.placementSystem.StartPlacement(databaseItemID);
@@ -59,7 +60,10 @@ public class BuySlot : MonoBehaviour
 
         foreach (BuildRequirement req in objectData.requirements)
         {
-            if (ResourceManager.Instance.GetResourceAmount(req.resource) < req.amount)
+            int have = ResourceManager.Instance.GetResourceAmount(req.resource);
+            Debug.Log($"Slot {databaseItemID}: braucht {req.amount} {req.resource}, vorhanden {have}");
+
+            if (have < req.amount)
             {
                 requiremtMet = false;
                 break;
@@ -67,6 +71,7 @@ public class BuySlot : MonoBehaviour
         }
 
         isAvailable = requiremtMet;
+        Debug.Log($"Slot {databaseItemID}: isAvailable = {isAvailable}");
 
         UpdateAvailabilityUI();
     }

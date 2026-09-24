@@ -463,7 +463,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485127633}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -488,6 +488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BuySlot
   availableSprite: {fileID: -1599318770, guid: 521e56164612fcf41ba83cf963266bcf, type: 3}
   unAvailableSprite: {fileID: -1864661332, guid: 521e56164612fcf41ba83cf963266bcf, type: 3}
+  isAvailable: 0
   buySystem: {fileID: 1749989789}
   databaseItemID: 1
 --- !u!114 &485127636
@@ -566,7 +567,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1742665912, guid: 172ca8edfeda3144797e48cc731f042e, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -691,7 +692,6 @@ RectTransform:
   m_Children:
   - {fileID: 118199940}
   - {fileID: 1986165471}
-  - {fileID: 1206489689}
   m_Father: {fileID: 957744190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8957291, y: 0}
@@ -835,6 +835,7 @@ RectTransform:
   - {fileID: 948809558}
   - {fileID: 89639282}
   - {fileID: 880673854}
+  - {fileID: 1206489689}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1310,17 +1311,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1206489688}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 948809558}
+  m_Father: {fileID: 957744190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.96500003}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -520.00006}
-  m_SizeDelta: {x: 0, y: 1040}
+  m_AnchoredPosition: {x: 859.8989, y: -520.00006}
+  m_SizeDelta: {x: -1719.8016, y: 1040}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1206489690
 MonoBehaviour:
@@ -1336,7 +1337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1564,7 +1565,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 461fd09712841f24791fe33eadc079f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  credits: 300
   GlaubeUI: {fileID: 1206489690}
 --- !u!4 &1359053203
 Transform:
@@ -1610,7 +1610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73555599cf7fefc44882783f4f6d4cf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  databaseSO: {fileID: 0}
+  databaseSO: {fileID: 11400000, guid: 2a9f8f39b476cf943bc7688007052eac, type: 2}
 --- !u!4 &1379342676
 Transform:
   m_ObjectHideFlags: 0
@@ -1773,6 +1773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BuySlot
   availableSprite: {fileID: 1847260255, guid: 521e56164612fcf41ba83cf963266bcf, type: 3}
   unAvailableSprite: {fileID: 865082221, guid: 521e56164612fcf41ba83cf963266bcf, type: 3}
+  isAvailable: 0
   buySystem: {fileID: 1749989789}
   databaseItemID: 1
 --- !u!1 &1660329556
@@ -2115,6 +2116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   availableSprite: {fileID: 2080741243, guid: 521e56164612fcf41ba83cf963266bcf, type: 3}
   unAvailableSprite: {fileID: -529615287, guid: 521e56164612fcf41ba83cf963266bcf, type: 3}
+  isAvailable: 0
   buySystem: {fileID: 1749989789}
   databaseItemID: 0
 --- !u!1 &1749989787
@@ -2198,7 +2200,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875328660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2223,6 +2225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   availableSprite: {fileID: 596360557, guid: 521e56164612fcf41ba83cf963266bcf, type: 3}
   unAvailableSprite: {fileID: -1599805472, guid: 521e56164612fcf41ba83cf963266bcf, type: 3}
+  isAvailable: 0
   buySystem: {fileID: 1749989789}
   databaseItemID: 0
 --- !u!114 &1875328663
@@ -2301,7 +2304,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1255466943, guid: 172ca8edfeda3144797e48cc731f042e, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

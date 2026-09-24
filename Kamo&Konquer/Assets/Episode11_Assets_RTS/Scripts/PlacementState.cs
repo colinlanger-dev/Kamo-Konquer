@@ -56,19 +56,23 @@ public class PlacementState : IBuildingState
             return;
         }
 
-        int index = objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex].Prefab, grid.CellToWorld(gridPosition));
+        int index = objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex].Prefab,
+            grid.CellToWorld(gridPosition));
 
         ResourceManager.Instance.DecreaseResourcesBasedOnRequirement(database.objectsData[selectedObjectIndex]);
 
         // If this id is a floor id, then its a floor data, else its a furniture data
-        GridData selectedData = GetAllFloorIDs().Contains(database.objectsData[selectedObjectIndex].ID) ? floorData : furnitureData;
-       
+        GridData selectedData = GetAllFloorIDs().Contains(database.objectsData[selectedObjectIndex].ID)
+            ? floorData
+            : furnitureData;
+
         selectedData.AddObjectAt(gridPosition,
             database.objectsData[selectedObjectIndex].Size,
             database.objectsData[selectedObjectIndex].ID,
             index);
 
         previewSystem.UpdatePosition(grid.CellToWorld(gridPosition), false);
+        
     }
 
     // When you have more floor objects add their id here

@@ -19,9 +19,9 @@ public class ResourceManager : MonoBehaviour
 
     }
 
-    public int credits = 300;
+    private int glaube = 300;
 
-    public event Action  OnResourceChanged;
+    public event Action OnResourceChanged;
 
     public TextMeshProUGUI GlaubeUI;
 
@@ -30,14 +30,14 @@ public class ResourceManager : MonoBehaviour
         Glaube
     }
 
-    private void Start()
+    private void Start() 
     {
         UpdateUI();
     }
 
-    public int GetCredit()
+    public int GetGlaube()
     {
-        return credits;
+        return glaube;
     }
 
     public void IncreaseResource(ResourcesType resource, int amountToIncrease)
@@ -45,7 +45,7 @@ public class ResourceManager : MonoBehaviour
         switch (resource)
         {
             case ResourcesType.Glaube:
-                credits += amountToIncrease;
+                glaube += amountToIncrease;
                 break;
             default:
                 break;
@@ -59,7 +59,7 @@ public class ResourceManager : MonoBehaviour
         switch (resource)
         {
             case ResourcesType.Glaube:
-                credits -= amountToDecrease;
+                glaube -= amountToDecrease;
                 break;
             default:
                 break;
@@ -74,7 +74,7 @@ public class ResourceManager : MonoBehaviour
         switch (resource)
         {
             case ResourcesType.Glaube:
-                return credits;
+                return glaube;
             default:
                 break;
         }
@@ -91,7 +91,7 @@ public class ResourceManager : MonoBehaviour
 
     private void UpdateUI()
     {
-        GlaubeUI.text = $"{credits}";
+        GlaubeUI.text = $"{glaube}";
     }
 
     private void OnEnable()

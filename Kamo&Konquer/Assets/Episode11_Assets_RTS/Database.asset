@@ -20,12 +20,14 @@ MonoBehaviour:
     <Prefab>k__BackingField: {fileID: 7504205802836147159, guid: 033031a8d2cc0114baebec7a7d964ca4, type: 3}
     <requirements>k__BackingField:
     - resource: 0
-      amount: 150
+      amount: 100
     <benefits>k__BackingField: []
   - <Name>k__BackingField: Kaserne
     <ID>k__BackingField: 1
     description: 
-    <Size>k__BackingField: {x: 3, y: 3}
+    <Size>k__BackingField: {x: 2, y: 2}
     <Prefab>k__BackingField: {fileID: 1555125030896941773, guid: 4ecbe2fed31bb3544a27fd4a98b10fcc, type: 3}
-    <requirements>k__BackingField: []
+    <requirements>k__BackingField:
+    - resource: 0
+      amount: 200
     <benefits>k__BackingField: []
