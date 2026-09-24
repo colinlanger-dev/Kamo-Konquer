@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d8518716c2c3a4d9e4cfaaa66de741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Constructable
+  spriteNormal: {fileID: -985721554, guid: 76c0d43b46473ea40aa7c924aed631ad, type: 3}
+  spriteBeschaedigt: {fileID: 1075315211, guid: 76c0d43b46473ea40aa7c924aed631ad, type: 3}
+  constMaxHealth: 100
 --- !u!1001 &8518223987716345979
 PrefabInstance:
   m_ObjectHideFlags: 0

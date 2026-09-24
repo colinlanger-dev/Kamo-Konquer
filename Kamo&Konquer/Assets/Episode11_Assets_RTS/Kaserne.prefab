@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d8518716c2c3a4d9e4cfaaa66de741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteNormal: {fileID: -2051356918, guid: 76c0d43b46473ea40aa7c924aed631ad, type: 3}
+  spriteBeschaedigt: {fileID: -1853260219, guid: 76c0d43b46473ea40aa7c924aed631ad, type: 3}
+  constMaxHealth: 200
 --- !u!1001 &3202992395655080194
 PrefabInstance:
   m_ObjectHideFlags: 0
