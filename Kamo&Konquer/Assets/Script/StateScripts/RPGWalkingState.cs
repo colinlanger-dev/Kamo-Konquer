@@ -7,7 +7,7 @@ public class RPGWalkingState : StateMachineBehaviour
     AttackControlerScript attackControlerScript;
     NavMeshAgent agent;
     
-    public float attackingDistance = 1f;
+    public float attackingDistance = 10f;
     
     
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
