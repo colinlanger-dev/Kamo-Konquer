@@ -3,12 +3,11 @@ using UnityEngine;
 public class AttackControlerScript : MonoBehaviour
 {
     public Transform targetToAttack;
-    UnitMovementScript unitMovementScript;
 
-    private void Start()
-    {
-        unitMovementScript = GetComponent<UnitMovementScript>();
-    }
+    public Material idleStateMaterial;
+    public Material walkStateMaterial;
+    public Material attackStateMaterial;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,6 +22,10 @@ public class AttackControlerScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        targetToAttack = null;
+        if (targetToAttack != null && (other.transform == targetToAttack || other.transform.IsChildOf(targetToAttack)))
+            targetToAttack = null;
     }
+
+
+
 }
