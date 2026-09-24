@@ -1,194 +1,196 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class UnitSelectionManager : MonoBehaviour
 {
-    public static UnitSelectionManager Instance {  get; set; }
+    public static UnitSelectionManager Instance { get; private set; }
 
-    public List<GameObject> allUnitsList = new List<GameObject>();
-    public List<GameObject> unitsSelected = new List<GameObject>();
-
-    public LayerMask clickable;
+    public List<GameObject> allUnitsList = new();
+    public List<GameObject> unitsSelected = new();
     public LayerMask ground;
     public GameObject groundMarker;
-
-    public LayerMask attackable;
     public bool attackCursorVisible;
-
-    
 
     private Camera cam;
 
     private void Awake()
     {
-        if(Instance == null )
-        {
-            Instance = this;
-        }
-        else
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
+            return;
         }
+        Instance = this;
     }
 
     private void Start()
     {
         cam = Camera.main;
     }
+
     private void Update()
     {
+        if (cam == null)
+            cam = Camera.main;
+        if (cam == null)
+            return;
+
         if (Input.GetMouseButtonDown(0))
-        {
-            
-            RaycastHit hit;
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, clickable))
-            {
-                if (Input.GetKey(KeyCode.LeftShift))
-                {
-                    MultiSelect(hit.collider.gameObject);
-                }
-                else
-                {
-                    SelectByClicking(hit.collider.gameObject);
-                }
-
-            }
-            else
-            {
-                if (!Input.GetKey(KeyCode.LeftShift))
-                {
-                    DeselectAll();
-                }
-
-            }
-        }
+            HandleSelection();
 
         if (Input.GetMouseButtonDown(1))
-        {
-            RaycastHit hit;
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
-            {
-                
-              
-                    
-                    groundMarker.transform.position = hit.point;
-
-                    groundMarker.SetActive(false);
-                    groundMarker.SetActive(true);
-
-             
-                
-
-            }
-        }
-
-        if (unitsSelected.Count > 0 && AtleastOneOffensiveUnit(unitsSelected))
-        {
-            RaycastHit hit;
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
-
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, attackable))
-            {
-                Debug.Log("Enemy Hovered with mouse");
-
-                attackCursorVisible = true;
-
-                if (Input.GetMouseButtonDown(1))
-                {
-                    // The ray can hit a child collider; the enemy controller usually
-                    // lives on the root object and is needed by the damage code.
-                    AttackControlerScript targetController = hit.collider.GetComponentInParent<AttackControlerScript>();
-                    Transform target = targetController != null ? targetController.transform : hit.transform;
-
-                    foreach (GameObject unit in unitsSelected)
-                    {
-                        if (unit.GetComponent<AttackControlerScript>())
-                        {
-                            unit.GetComponent<AttackControlerScript>().targetToAttack = target;
-                            Debug.Log($"Attack target set: {unit.name} -> {target.name}");
-                        }
-                    }
-                }
-
-
-            }
-        }
-
+            HandleCommand();
     }
 
-    private bool AtleastOneOffensiveUnit(List<GameObject> unitsSelected)
+    private void HandleSelection()
     {
-        foreach (GameObject units in unitsSelected)
+        UnitScript clickedUnit = FindOwnUnitAtMouse();
+        bool addToSelection = Input.GetKey(KeyCode.LeftShift);
+
+        if (clickedUnit == null)
         {
-            return true;
+            if (!addToSelection)
+                DeselectAll();
+            return;
         }
 
-        return false;
+        GameObject unit = clickedUnit.gameObject;
+        if (!addToSelection)
+            DeselectAll();
+
+        if (unitsSelected.Contains(unit))
+        {
+            if (addToSelection)
+                SelectUnit(unit, false);
+            unitsSelected.Remove(unit);
+        }
+        else
+        {
+            unitsSelected.Add(unit);
+            SelectUnit(unit, true);
+        }
+    }
+
+    private void HandleCommand()
+    {
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        Transform target = FindAttackTarget(ray);
+        if (target != null)
+        {
+            attackCursorVisible = true;
+            foreach (GameObject unit in unitsSelected)
+            {
+                AttackControlerScript attack = unit.GetComponentInParent<AttackControlerScript>();
+                if (attack != null)
+                    attack.OrderAttack(target);
+            }
+            return;
+        }
+
+        attackCursorVisible = false;
+        if (Physics.Raycast(ray, out RaycastHit groundHit, Mathf.Infinity, ground))
+        {
+            if (groundMarker != null)
+            {
+                groundMarker.transform.position = groundHit.point;
+                groundMarker.SetActive(false);
+                groundMarker.SetActive(true);
+            }
+
+            foreach (GameObject unit in unitsSelected)
+            {
+                UnitMovementScript movement = unit.GetComponentInParent<UnitMovementScript>();
+                if (movement != null)
+                    movement.OrderMove(groundHit.point);
+            }
+        }
+    }
+
+    private UnitScript FindOwnUnitAtMouse()
+    {
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit[] hits = Physics.RaycastAll(ray);
+        System.Array.Sort(hits, (a, b) => a.distance.CompareTo(b.distance));
+
+        foreach (RaycastHit hit in hits)
+        {
+            UnitScript unit = hit.collider.GetComponentInParent<UnitScript>();
+            TeamManagerScript team = TeamManagerScript.FindInParents(hit.collider.transform);
+            if (unit != null && team != null && team.CurrentTeam.Value == TeamManagerScript.LocalTeam)
+                return unit;
+        }
+        return null;
+    }
+
+    private Transform FindAttackTarget(Ray ray)
+    {
+        RaycastHit[] hits = Physics.RaycastAll(ray);
+        System.Array.Sort(hits, (a, b) => a.distance.CompareTo(b.distance));
+
+        foreach (RaycastHit hit in hits)
+        {
+            TeamManagerScript team = TeamManagerScript.FindInParents(hit.collider.transform);
+            if (team != null)
+            {
+                TeamManagerScript.Team targetTeam = team.CurrentTeam.Value;
+                if (targetTeam != TeamManagerScript.Team.None && targetTeam != TeamManagerScript.LocalTeam)
+                    return team.transform;
+
+                if (targetTeam == TeamManagerScript.LocalTeam)
+                    continue;
+            }
+
+            if (IsTaggedAttackTarget(hit.collider.transform))
+            {
+                AttackControlerScript controller = hit.collider.GetComponentInParent<AttackControlerScript>();
+                if (controller != null)
+                    return controller.transform;
+            }
+        }
+
+        return null;
+    }
+
+    private static bool IsTaggedAttackTarget(Transform target)
+    {
+        return target.CompareTag("Unit") || target.CompareTag("Building") ||
+               target.root.CompareTag("Unit") || target.root.CompareTag("Building");
     }
 
     public void DeselectAll()
     {
-        foreach (var unit in unitsSelected) 
-        {
+        foreach (GameObject unit in unitsSelected)
             SelectUnit(unit, false);
-        }
-
         unitsSelected.Clear();
-    }
-
-    
-
-    private void SelectByClicking(GameObject unit)
-    {
-        DeselectAll();
-        
-        unitsSelected.Add(unit);
-        SelectUnit(unit, true);
-    }
-
-    private void EnableUnitMovement(GameObject unit, bool enabled)
-    {
-        unit.GetComponent<UnitMovementScript>().enabled = enabled;
-    }
-    private void MultiSelect(GameObject unit)
-    {
-        if(!unitsSelected.Contains(unit))
-        {
-            unitsSelected.Add(unit);
-            SelectUnit(unit, true);
-
-        }
-        else
-        {
-            SelectUnit(unit, false);
-            unitsSelected.Remove(unit);
-            
-        }
-    }
-
-    private void TriggerSelectorIndicator(GameObject unit, bool isVisable)
-    {
-        unit.transform.Find("Indicator").gameObject.SetActive(isVisable);
     }
 
     public void DragSelect(GameObject unit)
     {
-        if(!unitsSelected.Contains(unit))
-        {
-            unitsSelected.Add(unit);
-            SelectUnit( unit, true);
-        }
+        if (unit == null)
+            return;
+
+        TeamManagerScript team = TeamManagerScript.FindInParents(unit.transform);
+        if (team == null || team.CurrentTeam.Value != TeamManagerScript.LocalTeam || unitsSelected.Contains(unit))
+            return;
+
+        unitsSelected.Add(unit);
+        SelectUnit(unit, true);
     }
 
-    private void SelectUnit(GameObject unit, bool isSelected)
+    private void SelectUnit(GameObject unit, bool selected)
     {
-        TriggerSelectorIndicator(unit, isSelected);
-        EnableUnitMovement(unit, isSelected);
+        Transform indicator = unit.transform.Find("Indicator");
+        if (indicator != null)
+            indicator.gameObject.SetActive(selected);
+
+        UnitMovementScript movement = unit.GetComponentInParent<UnitMovementScript>();
+        if (movement != null)
+            movement.SetSelected(selected);
     }
 
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
+    }
 }

@@ -1,3 +1,4 @@
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -5,8 +6,6 @@ public class RPGAttackingState : StateMachineBehaviour
 {
     NavMeshAgent agent;
     AttackControlerScript attackControlerScript;
-    float nextAttackTime;
-
     public float stopAttackingDistance = 12f;
     
 
@@ -19,6 +18,10 @@ public class RPGAttackingState : StateMachineBehaviour
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        NetworkObject networkObject = animator.GetComponentInParent<NetworkObject>();
+        if (networkObject != null && networkObject.IsSpawned && NetworkManager.Singleton != null && !NetworkManager.Singleton.IsServer)
+            return;
+
         if (attackControlerScript.targetToAttack == null)
         {
             animator.SetBool("IsAttacking", false);
@@ -31,14 +34,6 @@ public class RPGAttackingState : StateMachineBehaviour
         {
             animator.SetBool("IsAttacking", false);
             return;
-        }
-        if (Time.time >= nextAttackTime)
-        {
-            float damage = attackControlerScript.unitDamage;
-            AttackControlerScript targetController = attackControlerScript.targetToAttack.GetComponentInParent<AttackControlerScript>();
-            if (targetController != null) targetController.ReceiveDamage(damage);
-            Debug.Log("Damage sollte kommen");
-            nextAttackTime = Time.time + attackControlerScript.attackSpeed;
         }
         float distanceFromTarget = Vector3.Distance(attackControlerScript.targetToAttack.position, animator.transform.position);
         if (distanceFromTarget > stopAttackingDistance)

@@ -3,21 +3,36 @@ using UnityEngine.AI;
 
 public class UnitScript : MonoBehaviour
 {
-    NavMeshAgent agent;
-    
-    void Start()
+    private NavMeshAgent agent;
+    private bool isRegistered;
+
+    private void Start()
     {
-        UnitSelectionManager.Instance.allUnitsList.Add(gameObject);
+        TryRegisterWithSelectionManager();
         agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
+        if (agent != null)
+            agent.updateRotation = false;
+    }
 
+    private void Update()
+    {
+        if (!isRegistered)
+            TryRegisterWithSelectionManager();
+    }
 
+    private void TryRegisterWithSelectionManager()
+    {
+        if (UnitSelectionManager.Instance == null)
+            return;
+
+        if (!UnitSelectionManager.Instance.allUnitsList.Contains(gameObject))
+            UnitSelectionManager.Instance.allUnitsList.Add(gameObject);
+        isRegistered = true;
     }
 
     private void OnDestroy()
     {
-        UnitSelectionManager.Instance.allUnitsList.Remove(gameObject);
+        if (UnitSelectionManager.Instance != null)
+            UnitSelectionManager.Instance.allUnitsList.Remove(gameObject);
     }
-
-
 }

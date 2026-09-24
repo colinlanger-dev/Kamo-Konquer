@@ -1,51 +1,102 @@
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class UnitMovementScript : MonoBehaviour
+public class UnitMovementScript : NetworkBehaviour
 {
-    Camera cam;
-    NavMeshAgent agent;
-    public LayerMask ground;
-    AttackControlerScript attackControler;
-    Animator animator;
-    public bool CommandedToMove;
-    
+    private NavMeshAgent agent;
+    private AttackControlerScript attackController;
+    private Animator animator;
+    private bool isSelected;
 
-    void Start()
+    public bool CommandedToMove { get; private set; }
+
+    private void Awake()
     {
-        cam = Camera.main;
         agent = GetComponent<NavMeshAgent>();
-        attackControler = GetComponent<AttackControlerScript>();
+        attackController = GetComponent<AttackControlerScript>();
         animator = GetComponent<Animator>();
     }
 
-    
-    void Update()
+    public override void OnNetworkSpawn()
     {
-        if(Input.GetMouseButtonDown(1))
-        {
-            RaycastHit hit;
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            
-            if (UnitSelectionManager.Instance != null && Physics.Raycast(ray, out hit, Mathf.Infinity, UnitSelectionManager.Instance.attackable))
-                return;
+        if (agent != null && !IsServer)
+            agent.enabled = false;
+    }
 
-            if(Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
-            {
-                
-                attackControler.targetToAttack = null;
-                animator.SetBool("IsAttacking", false);
-                animator.SetBool("IsWalking", true);
-                CommandedToMove = true;
-                agent.SetDestination(hit.point);
-                
-            }
+    public void SetSelected(bool selected)
+    {
+        isSelected = selected;
+    }
+
+    public void ClearMoveCommandForAttack()
+    {
+        if (IsSpawned && !IsServer)
+            return;
+
+        CommandedToMove = false;
+        if (agent != null && agent.enabled && agent.isOnNavMesh && agent.hasPath)
+            agent.ResetPath();
+    }
+
+    public void OrderMove(Vector3 destination)
+    {
+        if (!isSelected)
+            return;
+
+        if (!IsSpawned)
+        {
+            ApplyMove(destination);
+            return;
         }
 
-        if (CommandedToMove && !agent.pathPending && agent.hasPath && agent.remainingDistance <= agent.stoppingDistance)
+        if (IsServer)
+            ApplyMove(destination);
+        else
+            MoveServerRpc(destination);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void MoveServerRpc(Vector3 destination, ServerRpcParams rpcParams = default)
+    {
+        TeamManagerScript teamMember = TeamManagerScript.FindInParents(transform);
+        TeamManagerScript.Team issuingTeam = TeamManagerScript.GetTeamForClient(rpcParams.Receive.SenderClientId);
+        if (teamMember == null || teamMember.CurrentTeam.Value != issuingTeam)
+            return;
+
+        ApplyMove(destination);
+    }
+
+    private void ApplyMove(Vector3 destination)
+    {
+        if (agent == null || !agent.enabled)
+            return;
+
+        if (attackController != null)
+            attackController.ClearAttackTarget();
+
+        CommandedToMove = true;
+        if (animator != null)
+        {
+            animator.SetBool("IsAttacking", false);
+            animator.SetBool("IsWalking", true);
+        }
+
+        agent.isStopped = false;
+        agent.SetDestination(destination);
+    }
+
+    private void Update()
+    {
+        if (!IsServer && IsSpawned)
+            return;
+
+        if (CommandedToMove && agent != null && agent.enabled && agent.isOnNavMesh && !agent.pathPending &&
+            agent.remainingDistance <= agent.stoppingDistance + 0.1f)
         {
             CommandedToMove = false;
-            animator.SetBool("IsWalking", false);
+            if (animator != null)
+                animator.SetBool("IsWalking", false);
         }
     }
 }

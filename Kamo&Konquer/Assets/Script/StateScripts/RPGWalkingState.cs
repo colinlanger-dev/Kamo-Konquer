@@ -1,3 +1,4 @@
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -20,6 +21,10 @@ public class RPGWalkingState : StateMachineBehaviour
     
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        NetworkObject networkObject = animator.GetComponentInParent<NetworkObject>();
+        if (networkObject != null && networkObject.IsSpawned &&
+            NetworkManager.Singleton != null && !NetworkManager.Singleton.IsServer)
+            return;
 
         UnitMovementScript movement = animator.GetComponent<UnitMovementScript>();
         if (attackControlerScript.targetToAttack == null && !movement.CommandedToMove)

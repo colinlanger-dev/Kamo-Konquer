@@ -351,14 +351,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UnitSelectionManager
   allUnitsList: []
   unitsSelected: []
-  clickable:
-    serializedVersion: 2
-    m_Bits: 512
   ground:
     serializedVersion: 2
     m_Bits: 256
   groundMarker: {fileID: 1178450000428638211}
-  attackable:
-    serializedVersion: 2
-    m_Bits: 128
   attackCursorVisible: 0
