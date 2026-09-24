@@ -1,0 +1,1896 @@
+fileFormatVersion: 2
+guid: 3b7f77694910803418f05cfa1f02d8a1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AltRPG
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 706
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9f1d2cd754af6c499e9be2efc017271
+      internalID: 326191046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltArbeiter
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 706
+        width: 5
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b0dc7f45cbda143b5ff2ef69d6e228
+      internalID: -1789900626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadCar
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 699
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5eb836d87d17b4eb980c437846d18b
+      internalID: -989409880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltRPG_Fire_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 692
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d82b2d6f24a44e1428d7e0ac06cbb3c9
+      internalID: 1996332777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltRPG_Fire_2
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 692
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c836c9e9531ab1242ac7439b824df2a9
+      internalID: 703287651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltRPG_Fire_3
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 692
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3afa52e045d89da488465ef391446054
+      internalID: -1457562134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltArbeiter_Fire_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 689
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a8d833c2cbf4884aa908e41323dffb5
+      internalID: -1968978325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltArbeiter_Fire_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 689
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f342193c2317e43ba71c9b3bc07abc
+      internalID: 235146055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltArbeiter_Fire_3
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 689
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e140c850e1f8f2641a41b15fb9d5eaa8
+      internalID: 1686199134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadCar_Walk
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 686
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7064bb7b2024a5d488bd80f9afcee39b
+      internalID: 1789400531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltRPG_Reload_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 678
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f763b06b089b32642a34e1c7ddcf6a57
+      internalID: -336938708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltRPG_Reload_2
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 678
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a326be634209c048af119ed6fe01a2b
+      internalID: 1482827400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltRPG_Reload_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 678
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae90a9a1052455745a38496266da3f87
+      internalID: -1894193147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltArbeiter_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 673
+        width: 5
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3de6d3fbdb90db469bd7bbb92d7a743
+      internalID: -1587372944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltArbeiter_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 673
+        width: 5
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92f8003e6f89f6245ad939b4774d7608
+      internalID: 1603757773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadCar_Fire
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 673
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b3fcd257e531f54792967e064252774
+      internalID: -876123374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltRPG_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 664
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c6b61496ba77749a4fd517d9cd94c3
+      internalID: -273940565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltRPG_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 664
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2250d495a3fa5141bac0fd3b6ad385f
+      internalID: -2084639729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltArbeiter_Die_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 654
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7749bdcce9fe2544381b0a9a2e9b729e
+      internalID: 359231496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltArbeiter_Die_2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 654
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 237d44734bd09ec4f816014e1e1ab445
+      internalID: -1730144268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltArbeiter_Die_3
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 654
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff89a1df75830349850123ef759ce8a
+      internalID: -311758350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltArbeiter_Die_4
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 654
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a91f6b67f527ea14f9247a71f81adbab
+      internalID: -19075791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadCar_Die
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 660
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3012e2cb876c65842b51bf4f7c5a5cdb
+      internalID: 1190295210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltRPG_Die_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 647
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8829e069cccf3274ebb02fd62e0652ef
+      internalID: 1266225280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltRPG_Die_2
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 647
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae44b6db386578641bf63cc5467f7b99
+      internalID: -1785051832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltRPG_Die_3
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 647
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78d44e91d2533c346a010423718b205f
+      internalID: -1292278417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltRPG_Die_4
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 647
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a0e937bd46bc35439bd535a2a3b8a30
+      internalID: 788518015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltRPG_Die_5
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 647
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e54e9b7e49fa63418678e89ade73daa
+      internalID: -81586946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltArbeiter_Dead
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 646
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ec19b7db47a2044bedfca7bfe1b0af
+      internalID: 1515408077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltRPG_Dead_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 639
+        width: 3
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a1e25c90462e34bac2c8a353b7694b
+      internalID: 1482756877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKommander
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 632
+        width: 4
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d292eebc807c01439e7baff3443d66a
+      internalID: 531416245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltMinigun
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 625
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 647a6e94e24f91044ac50875b492d228
+      internalID: 759122687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKrieger
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 626
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e1f03fd47ffaa479cdddc0bbaa4847
+      internalID: 1637050116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKommander_Fire_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 616
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c45de583ecea14daddbd5bb8da4dfd
+      internalID: -195690968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltMinigun_Fire
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 611
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d91e62944fbbe645b245ae2580c6893
+      internalID: -1072882622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKrieger_Fire_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 608
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06bf15dc9e53b874fb98aeb0d0d9b81f
+      internalID: 550461903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKrieger_Fire_2
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 608
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 203a51e61a67ffd498f553e13c928eef
+      internalID: -788584131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKommander_Fire_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 616
+        width: 5
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bd57365cdcf1ec4cae88ba8963c86ed
+      internalID: 1286606263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltMinigun_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 597
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4af1d1bcc05585047aa91bf382a59654
+      internalID: -1588535813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltMinigun_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 597
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 943b8a56b88ebd2479ca2397c722c653
+      internalID: 1678266241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKommander_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 600
+        width: 4
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 844a468fa4c521a4fb690e81c5e28af9
+      internalID: 367248093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKommander_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 600
+        width: 4
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438aeaba559f7a74884a54e7dd958deb
+      internalID: -815138324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltMinigun_Die_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 580
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b4dd5eba592a494d8e0cecda2498b39
+      internalID: -832877879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltMinigun_Die_2
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 580
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be726b3bd5ef37b40b9b3d237f3c963c
+      internalID: 1759267589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltMinigun_Die_3
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 580
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce379159ae6ac4140b3ce64c733e81e8
+      internalID: -2070150175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltMinigun_Die_4
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 580
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a1dc1494e7ef54dbc0a0338d17b597
+      internalID: -811662979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKrieger_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 589
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d949a0e2f929b0449b2190c9c7ab4f9a
+      internalID: 781251799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKrieger_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 589
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff49578f4f03428469f96eceb7389509
+      internalID: 2039127954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKommander_Die_2
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 583
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a11decfa09a8f4c895f628be55dd6f
+      internalID: -626511583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKommander_Die_3
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 583
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49cef3fd5917f0642a4533189877a1c9
+      internalID: 850773754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKommander_Die_4
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 583
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe16ff72d4168f48ad440defad3a7c9
+      internalID: 934136825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKrieger_Die_2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 571
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484844ec7ed3a3f43bbc6545d6604cb6
+      internalID: 2035103321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKrieger_Die_3
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 571
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0151d16c3428fa43b46fd59f885e71c
+      internalID: 1985723122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKrieger_Die_4
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 571
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84191b05946feec468700d50a822e0ba
+      internalID: 931887205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKommander_Die_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 583
+        width: 4
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53ba0a2a7b153ae419d00f92d5c040f5
+      internalID: 20230414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltMinigun_Dead
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 575
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b22d2ddaecffd7f40b4487572ec38a86
+      internalID: -1224034469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKrieger_Die_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 571
+        width: 5
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c53422b23935c41a78b26e73c4bcfd
+      internalID: 857034794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltTank
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 558
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3afe61de7830a4b4a80263b61d71106c
+      internalID: 1370049427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKrieger_Dead
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 560
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58411e47856304b45b13f75eb9287837
+      internalID: -1598702037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltTank_Fire_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 541
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81deb22dc5a13ff489e1c39220dd6ee9
+      internalID: 134241054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltTank_Fire_2
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 541
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07997f7a7663a384184cbb5014fc2a6a
+      internalID: -1944230749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltTank_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 524
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 445a04111a4d0c7408c3f75c0c196c31
+      internalID: 224088541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltTank_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 524
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a39001f1a8769594296f67f3a511362c
+      internalID: 382446168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltTank_Die_4
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 505
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 137b87bfa908ae6418eb7f67852e5874
+      internalID: 21389994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltTank_Die_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 505
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebc3f2168eb41fa4e9efa9758eca8e9e
+      internalID: -1091173216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltTank_Die_2
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 505
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40260caa6911ac24b808a6912629f533
+      internalID: 866949151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltTank_Die_3
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 505
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef983f68ba5437f4381291576c226854
+      internalID: 2080536356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltTank_Die_5
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 505
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03d16b22a17e6254abd1ee4f89683732
+      internalID: -1582634656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKreuzer
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 473
+        width: 67
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed939201a4f30794bae814d95d1f6708
+      internalID: -501350754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKreuzer_Walk
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 443
+        width: 69
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4857a613ac6c1314f8bd3210027877c5
+      internalID: -782341771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKreuzer_Fire_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 406
+        width: 67
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0d5b3eed2fa2194bbeeb7a0f470f6ee
+      internalID: 1747983238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKreuzer_Fire_2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 407
+        width: 67
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ff50d8009d71974fb9455e3f9498091
+      internalID: 158924329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKreuzer_Die_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 374
+        width: 67
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89542de33cc8def46a043ee62956192f
+      internalID: 1549732183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKreuzer_Die_2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 374
+        width: 67
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dc31f257d40fd64facd3d1d3951e08c
+      internalID: -1993335189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AzadKreuzer_Die_3
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 352
+        width: 102
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f55656f93d62d594e8a44400dab6b239
+      internalID: 513125403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltRPG_Dead_2
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 639
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0bb97d97133574a8e994390012e6a8
+      internalID: -297334208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AltRPG_Dead_3
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 639
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3fbc81226f3aeb4daf3b8ce48b5b02e
+      internalID: 203876061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5a4a6d11937522d43b9e04f5d85727c0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      AltArbeiter: -1789900626
+      AltArbeiter_Dead: 1515408077
+      AltArbeiter_Die_1: 359231496
+      AltArbeiter_Die_2: -1730144268
+      AltArbeiter_Die_3: -311758350
+      AltArbeiter_Die_4: -19075791
+      AltArbeiter_Fire_1: -1968978325
+      AltArbeiter_Fire_2: 235146055
+      AltArbeiter_Fire_3: 1686199134
+      AltArbeiter_Walk_1: -1587372944
+      AltArbeiter_Walk_2: 1603757773
+      AltMinigun: 759122687
+      AltMinigun_Dead: -1224034469
+      AltMinigun_Die_1: -832877879
+      AltMinigun_Die_2: 1759267589
+      AltMinigun_Die_3: -2070150175
+      AltMinigun_Die_4: -811662979
+      AltMinigun_Fire: -1072882622
+      AltMinigun_Walk_1: -1588535813
+      AltMinigun_Walk_2: 1678266241
+      AltRPG: 326191046
+      AltRPG_Dead_1: 1482756877
+      AltRPG_Dead_2: -297334208
+      AltRPG_Dead_3: 203876061
+      AltRPG_Die_1: 1266225280
+      AltRPG_Die_2: -1785051832
+      AltRPG_Die_3: -1292278417
+      AltRPG_Die_4: 788518015
+      AltRPG_Die_5: -81586946
+      AltRPG_Fire_1: 1996332777
+      AltRPG_Fire_2: 703287651
+      AltRPG_Fire_3: -1457562134
+      AltRPG_Reload_1: -336938708
+      AltRPG_Reload_2: 1482827400
+      AltRPG_Reload_3: -1894193147
+      AltRPG_Walk_1: -273940565
+      AltRPG_Walk_2: -2084639729
+      AltTank: 1370049427
+      AltTank_Die_1: -1091173216
+      AltTank_Die_2: 866949151
+      AltTank_Die_3: 2080536356
+      AltTank_Die_4: 21389994
+      AltTank_Die_5: -1582634656
+      AltTank_Fire_1: 134241054
+      AltTank_Fire_2: -1944230749
+      AltTank_Walk_1: 224088541
+      AltTank_Walk_2: 382446168
+      AlternativUnitSpriteSheet_31: 518303631
+      AlternativUnitSpriteSheet_39: 1401051417
+      AlternativUnitSpriteSheet_44: 1090445019
+      AlternativUnitSpriteSheet_45: 726890193
+      AlternativUnitSpriteSheet_54: 610927334
+      AlternativUnitSpriteSheet_58: 700966392
+      AzadCar: -989409880
+      AzadCar_Die: 1190295210
+      AzadCar_Fire: -876123374
+      AzadCar_Walk: 1789400531
+      AzadKommander: 531416245
+      AzadKommander_Die_1: 20230414
+      AzadKommander_Die_2: -626511583
+      AzadKommander_Die_3: 850773754
+      AzadKommander_Die_4: 934136825
+      AzadKommander_Fire_1: 1286606263
+      AzadKommander_Fire_2: -195690968
+      AzadKommander_Walk_1: 367248093
+      AzadKommander_Walk_2: -815138324
+      AzadKreuzer: -501350754
+      AzadKreuzer_Die_1: 1549732183
+      AzadKreuzer_Die_2: -1993335189
+      AzadKreuzer_Die_3: 513125403
+      AzadKreuzer_Fire_1: 1747983238
+      AzadKreuzer_Fire_2: 158924329
+      AzadKreuzer_Walk: -782341771
+      AzadKrieger: 1637050116
+      AzadKrieger_Dead: -1598702037
+      AzadKrieger_Die_1: 857034794
+      AzadKrieger_Die_2: 2035103321
+      AzadKrieger_Die_3: 1985723122
+      AzadKrieger_Die_4: 931887205
+      AzadKrieger_Fire_1: 550461903
+      AzadKrieger_Fire_2: -788584131
+      AzadKrieger_Walk_1: 781251799
+      AzadKrieger_Walk_2: 2039127954
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
