@@ -1,58 +1,62 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Constructable : MonoBehaviour
 {
+    [SerializeField] private float maxLeben = 100f;
     [SerializeField] private Sprite spriteNormal;
     [SerializeField] private Sprite spriteBeschaedigt;
-    private float constHealth;
-    public float constMaxHealth;
 
-    NavMeshObstacle obstacle;
+    private float aktuellesLeben;
     private SpriteRenderer sr;
+    private NavMeshObstacle obstacle;
 
-    private void Start()
+    void Awake()
     {
-        constHealth = constMaxHealth;
-        UpdateHealthUI();
+        // Sprite-Renderer kann auch in einem Kindobjekt liegen
+        sr = GetComponentInChildren<SpriteRenderer>();
+        aktuellesLeben = maxLeben;
+        SpriteAktualisieren();
     }
 
-    private void Update()
+    // Wird vom RPGAttackingState aufgerufen
+    public void ReceiveDamage(float schaden)
     {
-        Console.WriteLine(constHealth);
-        
+        aktuellesLeben -= schaden;
+        aktuellesLeben = Mathf.Max(aktuellesLeben, 0f);
+        Console.WriteLine(aktuellesLeben);
+
+        if (aktuellesLeben <= 0f)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        SpriteAktualisieren();
+    }
+
+    private void SpriteAktualisieren()
+    {
+        if (sr == null) return;
+        sr.sprite = (aktuellesLeben / maxLeben) < 0.5f ? spriteBeschaedigt : spriteNormal;
+    }
+
+
+    public void TakeDamage(int damage)
+    {
+        aktuellesLeben -= damage;
+        UpdateHealthUI();
     }
 
     private void UpdateHealthUI()
     {
-        Console.WriteLine(constHealth);
-        float prozent = constHealth / constMaxHealth;
-
-        if (prozent <= 0)
-        {
-            Destroy(gameObject);
-        }
-
-        else if (prozent < 0.5f)
-        {
-            sr.sprite = spriteBeschaedigt;
-        }
-
-        Console.WriteLine(prozent);
-    }
-
-    public void TakeDamage(int damage)
-    {
-        constHealth -= damage;
-        UpdateHealthUI();
+        Console.WriteLine(aktuellesLeben);
     }
 
     public void ConstructableWasPlaced()
     {
-         ActivateObstacle();
+        ActivateObstacle();
     }
 
     private void ActivateObstacle()

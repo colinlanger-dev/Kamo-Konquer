@@ -270,11 +270,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1555125030896941773, guid: 4ecbe2fed31bb3544a27fd4a98b10fcc, type: 3}
   m_PrefabInstance: {fileID: 1464407851}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &158660300 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7101280459190916585, guid: 4ecbe2fed31bb3544a27fd4a98b10fcc, type: 3}
-  m_PrefabInstance: {fileID: 1464407851}
-  m_PrefabAsset: {fileID: 0}
 --- !u!212 &158660301
 SpriteRenderer:
   serializedVersion: 2
@@ -334,6 +329,43 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &158660303
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158660298}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.87500024, z: 0.20000005}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &158660304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158660298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2561b98bff3093946816b74189bd9ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackControlerScript
+  targetToAttack: {fileID: 0}
+  health: 100
+  unitDamage: 0
+  attackSpeed: 20
 --- !u!1001 &320269792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -534,7 +566,7 @@ PrefabInstance:
     - target: {fileID: 7523753213462488543, guid: b45dbd5eec6cb3f45b9389f387421bcd, type: 3}
       propertyPath: targetToAttack
       value: 
-      objectReference: {fileID: 643050771}
+      objectReference: {fileID: 0}
     - target: {fileID: 7553189625355984863, guid: b45dbd5eec6cb3f45b9389f387421bcd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.99
@@ -661,16 +693,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Haus 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7504205802836147159, guid: 033031a8d2cc0114baebec7a7d964ca4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504205802836147159, guid: 033031a8d2cc0114baebec7a7d964ca4, type: 3}
+      propertyPath: m_TagString
+      value: Building
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 033031a8d2cc0114baebec7a7d964ca4, type: 3}
---- !u!4 &643050771 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1005457934480216234, guid: 033031a8d2cc0114baebec7a7d964ca4, type: 3}
-  m_PrefabInstance: {fileID: 643050770}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &916221972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,7 +1081,7 @@ PrefabInstance:
     - target: {fileID: 7417650772644545410, guid: 794f268986caafc47800c12d074a144d, type: 3}
       propertyPath: targetToAttack
       value: 
-      objectReference: {fileID: 158660300}
+      objectReference: {fileID: 0}
     - target: {fileID: 8058987544565273260, guid: 794f268986caafc47800c12d074a144d, type: 3}
       propertyPath: m_Name
       value: MinigunUnit
@@ -1099,7 +1134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1555125030896941773, guid: 4ecbe2fed31bb3544a27fd4a98b10fcc, type: 3}
       propertyPath: m_TagString
-      value: Building
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7101280459190916585, guid: 4ecbe2fed31bb3544a27fd4a98b10fcc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1148,6 +1183,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1555125030896941773, guid: 4ecbe2fed31bb3544a27fd4a98b10fcc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 158660301}
+    - targetCorrespondingSourceObject: {fileID: 1555125030896941773, guid: 4ecbe2fed31bb3544a27fd4a98b10fcc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 158660303}
+    - targetCorrespondingSourceObject: {fileID: 1555125030896941773, guid: 4ecbe2fed31bb3544a27fd4a98b10fcc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 158660304}
   m_SourcePrefab: {fileID: 100100000, guid: 4ecbe2fed31bb3544a27fd4a98b10fcc, type: 3}
 --- !u!1 &1491636137
 GameObject:
