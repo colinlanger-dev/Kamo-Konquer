@@ -12,19 +12,15 @@ public class AttackControlerScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
        
-            if (other.CompareTag("Enemy") && targetToAttack == null)
+            AttackControlerScript otherController = other.GetComponentInParent<AttackControlerScript>();
+            bool isAttackableTarget = other.CompareTag("Enemy") || other.CompareTag("Building") ||
+                                      (otherController != null && (otherController.CompareTag("Enemy") || otherController.CompareTag("Building")));
+            if (isAttackableTarget && targetToAttack == null)
             {
-                AttackControlerScript enemyController = other.GetComponentInParent<AttackControlerScript>();
-                targetToAttack = enemyController != null ? enemyController.transform : other.transform;
+                targetToAttack = otherController != null ? otherController.transform : other.transform;
             }
         
         
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (targetToAttack != null && (other.transform == targetToAttack || other.transform.IsChildOf(targetToAttack)))
-            targetToAttack = null;
     }
 
     public void ReceiveDamage(float damage)

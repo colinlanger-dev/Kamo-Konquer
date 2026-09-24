@@ -36,8 +36,7 @@ public class RPGAttackingState : StateMachineBehaviour
         {
             float damage = attackControlerScript.unitDamage;
             AttackControlerScript targetController = attackControlerScript.targetToAttack.GetComponentInParent<AttackControlerScript>();
-            if (targetController != null)
-                targetController.ReceiveDamage(damage);
+            if (targetController != null) targetController.ReceiveDamage(damage);
             Debug.Log("Damage sollte kommen");
             nextAttackTime = Time.time + attackControlerScript.attackSpeed;
         }
