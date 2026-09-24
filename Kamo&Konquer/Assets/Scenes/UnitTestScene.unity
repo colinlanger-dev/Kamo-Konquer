@@ -1136,6 +1136,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Building
       objectReference: {fileID: 0}
+    - target: {fileID: 3435557174567079971, guid: 4ecbe2fed31bb3544a27fd4a98b10fcc, type: 3}
+      propertyPath: spawnInterval
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7101280459190916585, guid: 4ecbe2fed31bb3544a27fd4a98b10fcc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
