@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,11 +10,13 @@ public class Constructable : MonoBehaviour
     private float aktuellesLeben;
     private SpriteRenderer sr;
     private NavMeshObstacle obstacle;
+    private Spawner spawner;
 
     void Awake()
     {
         // Sprite-Renderer kann auch in einem Kindobjekt liegen
         sr = GetComponentInChildren<SpriteRenderer>();
+        spawner = GetComponent<Spawner>(); // optional, kann auch null sein
         aktuellesLeben = maxLeben;
         SpriteAktualisieren();
     }
@@ -25,7 +26,7 @@ public class Constructable : MonoBehaviour
     {
         aktuellesLeben -= schaden;
         aktuellesLeben = Mathf.Max(aktuellesLeben, 0f);
-        Console.WriteLine(aktuellesLeben);
+        Debug.Log(aktuellesLeben);
 
         if (aktuellesLeben <= 0f)
         {
@@ -42,7 +43,6 @@ public class Constructable : MonoBehaviour
         sr.sprite = (aktuellesLeben / maxLeben) < 0.5f ? spriteBeschaedigt : spriteNormal;
     }
 
-
     public void TakeDamage(int damage)
     {
         aktuellesLeben -= damage;
@@ -51,17 +51,20 @@ public class Constructable : MonoBehaviour
 
     private void UpdateHealthUI()
     {
-        Console.WriteLine(aktuellesLeben);
+        Debug.Log(aktuellesLeben);
     }
 
     public void ConstructableWasPlaced()
     {
         ActivateObstacle();
+
+        if (spawner != null)
+            spawner.StartSpawning();
     }
 
     private void ActivateObstacle()
     {
         obstacle = GetComponentInChildren<NavMeshObstacle>();
-        obstacle.enabled = true;
+        if (obstacle != null) obstacle.enabled = true;
     }
 }
