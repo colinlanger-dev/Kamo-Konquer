@@ -100,13 +100,17 @@ public class UnitSelectionManager : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(1))
                 {
-                    Transform target = hit.transform;
+                    // The ray can hit a child collider; the enemy controller usually
+                    // lives on the root object and is needed by the damage code.
+                    AttackControlerScript targetController = hit.collider.GetComponentInParent<AttackControlerScript>();
+                    Transform target = targetController != null ? targetController.transform : hit.transform;
 
                     foreach (GameObject unit in unitsSelected)
                     {
                         if (unit.GetComponent<AttackControlerScript>())
                         {
                             unit.GetComponent<AttackControlerScript>().targetToAttack = target;
+                            Debug.Log($"Attack target set: {unit.name} -> {target.name}");
                         }
                     }
                 }

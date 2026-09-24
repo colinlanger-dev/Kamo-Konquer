@@ -7,7 +7,7 @@ public class RPGWalkingState : StateMachineBehaviour
     AttackControlerScript attackControlerScript;
     NavMeshAgent agent;
     
-    public float attackingDistance = 10f;
+    public float attackingDistance = 1f;
     
     
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -35,7 +35,8 @@ public class RPGWalkingState : StateMachineBehaviour
                 agent.SetDestination(attackControlerScript.targetToAttack.position);
 
                 float distanceFromTarget = Vector3.Distance(attackControlerScript.targetToAttack.position, animator.transform.position);
-                if(distanceFromTarget < attackingDistance)
+                bool destinationReached = !agent.pathPending && agent.hasPath && agent.remainingDistance <= agent.stoppingDistance + 0.1f;
+                if(distanceFromTarget < attackingDistance || destinationReached)
                 {
                     agent.SetDestination(animator.transform.position);
                     animator.SetBool("IsAttacking", true);
