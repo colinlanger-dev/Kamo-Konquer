@@ -24,18 +24,48 @@ public class TeamManagerScript : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        if (!IsServer)
-            return;
+        CurrentTeam.OnValueChanged += OnCurrentTeamChanged;
 
-        CurrentTeam.Value = startingTeam != Team.None
-            ? startingTeam
-            : GetTeamForClient(OwnerClientId);
+        if (IsServer)
+        {
+            CurrentTeam.Value = startingTeam != Team.None
+                ? startingTeam
+                : GetTeamForClient(OwnerClientId);
+        }
+
+        ApplyTeamLayer(CurrentTeam.Value);
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        CurrentTeam.OnValueChanged -= OnCurrentTeamChanged;
     }
 
     public void SetTeamOnServer(Team team)
     {
         if (IsServer)
             CurrentTeam.Value = team;
+    }
+
+    private void OnCurrentTeamChanged(Team previousTeam, Team newTeam)
+    {
+        ApplyTeamLayer(newTeam);
+    }
+
+    private void ApplyTeamLayer(Team team)
+    {
+        int teamLayer = UnitSelectionManager.GetLayerForTeam(team);
+        if (teamLayer < 0)
+            return;
+
+        SetLayerRecursively(transform, teamLayer);
+    }
+
+    private static void SetLayerRecursively(Transform root, int layer)
+    {
+        root.gameObject.layer = layer;
+        foreach (Transform child in root)
+            SetLayerRecursively(child, layer);
     }
 
     public static void SetTeamForClient(ulong clientId, Team team)

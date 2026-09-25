@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 688035690705861775}
   - component: {fileID: 1015159936691125340}
   - component: {fileID: 1328277654153072635}
+  - component: {fileID: 2384010384782210001}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -262,5 +263,19 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 256
-  groundMarker: {fileID: 0}
+  groundMarker: {fileID: 1988427428914708232, guid: 0b66a69f5b2c4fb4cb6af6d123d1dbb2, type: 3}
   attackCursorVisible: 0
+--- !u!114 &2384010384782210001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5617111369033117019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2acacdf03ec35a046b3532843b4a17db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitSelectionBoxScript
+  boxVisual: {fileID: 0}
+  dragThreshold: 8
