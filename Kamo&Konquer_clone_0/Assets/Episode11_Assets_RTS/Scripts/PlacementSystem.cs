@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class PlacementSystem : MonoBehaviour
 {
+    public static PlacementSystem Instance { get; private set; }
 
     [SerializeField] private InputManager inputManager;
     [SerializeField] private Grid grid;
 
     [SerializeField] private ObjectsDatabseSO database;
 
-    [SerializeField] private GridData floorData, furnitureData; // floor things like roads, furniture change to "buildings"
+    [SerializeField] private GridData floorData, furnitureData;
 
     [SerializeField] private PreviewSystem previewSystem;
 
@@ -22,10 +23,15 @@ public class PlacementSystem : MonoBehaviour
     int selectedID;
 
     IBuildingState buildingState;
+    private bool removingMode;
+    private bool pendingBuildingRequest;
+    private int pendingBuildingId;
+    private uint nextPlacementRequestId;
+    private uint pendingPlacementRequestId;
 
-    private void Start()
+    private void Awake()
     {
-
+        Instance = this;
         floorData = new();
         furnitureData = new();
     }
@@ -39,8 +45,16 @@ public class PlacementSystem : MonoBehaviour
         Debug.Log("Placement ID: " + ID);
 
         StopPlacement();
+        removingMode = false;
 
-        buildingState = new PlacementState(ID, grid, previewSystem, database, floorData, furnitureData, objectPlacer);
+        buildingState = new PlacementState(
+            ID,
+            grid,
+            previewSystem,
+            database,
+            floorData,
+            furnitureData);
+        pendingBuildingRequest = false;
 
         inputManager.OnClicked += PlaceStructure;
         inputManager.OnExit += StopPlacement;
@@ -49,6 +63,7 @@ public class PlacementSystem : MonoBehaviour
     public void StartRemoving()
     {
         StopPlacement();
+        removingMode = true;
 
         buildingState = new RemovingState(grid, previewSystem, floorData, furnitureData, objectPlacer);
 
@@ -58,6 +73,9 @@ public class PlacementSystem : MonoBehaviour
 
     private void PlaceStructure()
     {
+        if (pendingBuildingRequest)
+            return;
+
         if (inputManager.IsPointerOverUI())
         {
             Debug.Log("Pointer was over UI - Returned");
@@ -67,19 +85,57 @@ public class PlacementSystem : MonoBehaviour
         Vector3 mousePosition = inputManager.GetSelectedMapPosition();
         Vector3Int gridPosition = grid.WorldToCell(mousePosition);
 
-        buildingState.OnAction(gridPosition);
+        if (buildingState == null)
+            return;
 
-        // ---- Using the ID remove used resources from resource manager ---- // 
-        ObjectData ob = database.GetObjectByID(selectedID);
-        // ResourceManager.Instance.RemoveResourcesBasedOnRequirements(ob, database);
-
-        // ---- Add Buildable Benifits ---- // 
-        foreach (BuildBenefits bf in ob.benefits)
+        lastDetectedPosition = gridPosition;
+        if (!removingMode)
         {
-            CalculateAndAddBenefit(bf);
+            pendingBuildingId = selectedID;
+            pendingPlacementRequestId = ++nextPlacementRequestId;
+            if (pendingPlacementRequestId == 0)
+                pendingPlacementRequestId = ++nextPlacementRequestId;
+            pendingBuildingRequest = true;
         }
 
-        // ---- Stop the placement after every build ---- // 
+        uint requestId = pendingPlacementRequestId;
+        if (!buildingState.OnAction(gridPosition, requestId))
+        {
+            pendingBuildingRequest = false;
+            return;
+        }
+
+        // The host may answer immediately for the local player and close this state
+        // from the result callback before OnAction returns.
+        if (buildingState == null)
+            return;
+
+        if (removingMode)
+            StopPlacement();
+    }
+
+    public void OnBuildingPlacementResult(bool accepted, int buildingId, uint requestId)
+    {
+        if (!pendingBuildingRequest || buildingId != pendingBuildingId ||
+            requestId != pendingPlacementRequestId)
+            return;
+
+        pendingBuildingRequest = false;
+        if (!accepted)
+        {
+            Debug.LogWarning("Der Host hat den Bauauftrag abgelehnt. Du kannst einen anderen Platz versuchen.");
+            if (buildingState != null)
+                buildingState.UpdateState(lastDetectedPosition);
+            return;
+        }
+
+        ObjectData objectData = database.GetObjectByID(buildingId);
+        if (objectData != null && objectData.benefits != null)
+        {
+            foreach (BuildBenefits benefit in objectData.benefits)
+                CalculateAndAddBenefit(benefit);
+        }
+
         StopPlacement();
     }
 
@@ -98,6 +154,7 @@ public class PlacementSystem : MonoBehaviour
         if (buildingState == null)
             return;
 
+        pendingBuildingRequest = false;
         buildingState.EndState();
 
         inputManager.OnClicked -= PlaceStructure;
@@ -115,6 +172,9 @@ public class PlacementSystem : MonoBehaviour
         if (buildingState == null)
             return;
 
+        if (pendingBuildingRequest)
+            return;
+
         Vector3 mousePosition = inputManager.GetSelectedMapPosition();
         Vector3Int gridPosition = grid.WorldToCell(mousePosition);
 
@@ -123,6 +183,72 @@ public class PlacementSystem : MonoBehaviour
             buildingState.UpdateState(gridPosition);
             lastDetectedPosition = gridPosition;
         }
-
     }
+
+    public static Vector3 GetBuildingCenter(Grid placementGrid, Vector3Int cell, Vector2Int size)
+    {
+        if (placementGrid == null)
+            return Vector3.zero;
+
+        Vector3 firstCellCenter = placementGrid.GetCellCenterWorld(cell);
+        Vector3 footprintOffset = placementGrid.transform.TransformVector(
+            new Vector3((size.x - 1) * 0.5f, (size.y - 1) * 0.5f, 0f));
+        return firstCellCenter + footprintOffset;
+    }
+
+    public static bool IsLocalFootprintClear(Grid placementGrid, Vector3Int cell, Vector2Int size)
+    {
+        if (placementGrid == null || size.x < 1 || size.y < 1)
+            return false;
+
+        Vector3 center = GetBuildingCenter(placementGrid, cell, size);
+        Vector3 halfExtents = new(
+            Mathf.Max(0.1f, size.x * 0.5f - 0.05f),
+            1.5f,
+            Mathf.Max(0.1f, size.y * 0.5f - 0.05f));
+        Collider[] colliders = Physics.OverlapBox(center, halfExtents, Quaternion.identity,
+            Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore);
+
+        foreach (Collider collider in colliders)
+        {
+            if (collider != null && (collider.CompareTag("Unit") || collider.CompareTag("Building") ||
+                collider.transform.root.CompareTag("Unit") || collider.transform.root.CompareTag("Building")))
+                return false;
+        }
+
+        return true;
+    }
+
+    public static bool IsFootprintClear(Grid placementGrid, Vector3Int cell, Vector2Int size)
+    {
+        return IsLocalFootprintClear(placementGrid, cell, size);
+    }
+
+    public void RegisterNetworkBuilding(Vector3Int cell, Vector2Int size, int buildingId)
+    {
+        if (grid == null || size.x < 1 || size.y < 1)
+            return;
+
+        GridData targetData = buildingId == 11 ? floorData : furnitureData;
+
+        if (!targetData.CanPlaceObjectAt(cell, size))
+            return;
+
+        targetData.AddObjectAt(cell, size, buildingId, -1);
+    }
+
+    public void UnregisterNetworkBuilding(Vector3Int cell, Vector2Int size, int buildingId)
+    {
+        if (floorData.HasCell(cell))
+            floorData.RemoveObjectAt(cell);
+        else if (furnitureData.HasCell(cell))
+            furnitureData.RemoveObjectAt(cell);
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
+    }
+
 }

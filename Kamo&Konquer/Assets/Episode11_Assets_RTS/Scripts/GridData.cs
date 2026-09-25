@@ -28,7 +28,9 @@ public class GridData
         {
             for (int y = 0; y < objectSize.y; y++)
             {
-                returnVal1.Add(gridPosition + new Vector3Int(x,0,y));
+                // In InGameScene the Grid is rotated 90 degrees around X, so
+                // its local X/Y axes map to the world X/Z ground plane.
+                returnVal1.Add(gridPosition + new Vector3Int(x, y, 0));
             }
         }
         return returnVal1;
@@ -49,11 +51,16 @@ public class GridData
 
     internal void RemoveObjectAt(Vector3Int gridPosition)
     {
-        foreach (var pos in placedObjects[gridPosition].occupiedPositions)
+        if (!placedObjects.TryGetValue(gridPosition, out PlacementData data))
+            return;
+
+        foreach (var pos in data.occupiedPositions)
         {
             placedObjects.Remove(pos);
         }
     }
+
+    public bool HasCell(Vector3Int gridPosition) => placedObjects.ContainsKey(gridPosition);
 
     internal int GetRepresentationIndex(Vector3Int gridPosition)
     {

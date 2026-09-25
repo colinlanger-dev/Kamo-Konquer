@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 public class PreviewSystem : MonoBehaviour
@@ -21,8 +22,32 @@ public class PreviewSystem : MonoBehaviour
     }
     public void StartShowingPlacementPreview(GameObject prefab, Vector2Int size)
     {
+        StopShowingPreview();
         previewObject = Instantiate(prefab);
+        PreparePreviewForPlacement(previewObject);
         PreparePreview(previewObject);
+    }
+
+    private static void PreparePreviewForPlacement(GameObject preview)
+    {
+        foreach (Collider collider in preview.GetComponentsInChildren<Collider>(true))
+            collider.enabled = false;
+
+        foreach (UnityEngine.AI.NavMeshAgent agent in preview.GetComponentsInChildren<UnityEngine.AI.NavMeshAgent>(true))
+            agent.enabled = false;
+
+        foreach (NetworkBehaviour behaviour in preview.GetComponentsInChildren<NetworkBehaviour>(true))
+            behaviour.enabled = false;
+
+        NetworkObject networkObject = preview.GetComponent<NetworkObject>();
+        if (networkObject != null)
+            networkObject.enabled = false;
+
+        foreach (Transform child in preview.GetComponentsInChildren<Transform>(true))
+        {
+            child.gameObject.tag = "Untagged";
+            child.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+        }
     }
 
     internal void StartShowingRemovePreview()

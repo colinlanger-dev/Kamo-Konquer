@@ -8,14 +8,23 @@ public class ObjectPlacer : MonoBehaviour
     [SerializeField]
     private List<GameObject> placedGameObjects = new();
 
-    public int PlaceObject(GameObject prefab, Vector3 position)
+    public int PlaceObject(GameObject prefab, Vector3 position, TeamManagerScript.Team owningTeam = TeamManagerScript.Team.None)
     {
         // We instantiate the prefab into the cell
         GameObject newObject = Instantiate(prefab);
         newObject.transform.position = position;
 
         // Enable different things for example activate the obstical
-        newObject.GetComponent<Constructable>().ConstructableWasPlaced();
+        Constructable constructable = newObject.GetComponent<Constructable>();
+        if (constructable == null)
+        {
+            Debug.LogError($"Placed building prefab '{prefab.name}' is missing a Constructable component.", newObject);
+            Destroy(newObject);
+            return -1;
+        }
+
+        constructable.SetOwningTeam(owningTeam);
+        constructable.ConstructableWasPlaced();
 
         // Storing the positions that are now occupied
         placedGameObjects.Add(newObject);

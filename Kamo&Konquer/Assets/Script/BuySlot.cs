@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,73 +5,92 @@ public class BuySlot : MonoBehaviour
 {
     public Sprite availableSprite;
     public Sprite unAvailableSprite;
-
-
     public bool isAvailable;
-
     public BuySystem buySystem;
-
     public int databaseItemID;
 
-    private void Start()
-    {
-        HandleResourcesChanged();
-    }
+    private ResourceManager resourceManager;
 
     private void OnEnable()
     {
-        ResourceManager.Instance.OnResourceChanged += HandleResourcesChanged;
+        BindResourceManager();
+    }
+
+    private void Start()
+    {
+        BindResourceManager();
+        HandleResourcesChanged();
     }
 
     private void OnDisable()
     {
-        ResourceManager.Instance.OnResourceChanged -= HandleResourcesChanged;
+        if (resourceManager != null)
+            resourceManager.OnResourceChanged -= HandleResourcesChanged;
+        resourceManager = null;
+    }
+
+    private void BindResourceManager()
+    {
+        ResourceManager activeManager = ResourceManager.Instance;
+        if (resourceManager == activeManager)
+            return;
+
+        if (resourceManager != null)
+            resourceManager.OnResourceChanged -= HandleResourcesChanged;
+
+        resourceManager = activeManager;
+        if (resourceManager != null)
+            resourceManager.OnResourceChanged += HandleResourcesChanged;
     }
 
     public void ClickedOnSlots()
     {
-        Debug.Log($"Slot {databaseItemID} geklickt, verfügbar: {isAvailable}");
-        if (isAvailable)
-        {
-            buySystem.placementSystem.StartPlacement(databaseItemID);
-        }
+        BindResourceManager();
+        ObjectData objectData = GetObjectData();
+        if (buySystem == null || buySystem.placementSystem == null || resourceManager == null ||
+            objectData == null || !resourceManager.CanAfford(objectData))
+            return;
+
+        buySystem.placementSystem.StartPlacement(databaseItemID);
     }
 
     private void UpdateAvailabilityUI()
     {
+        Image image = GetComponent<Image>();
+        Button button = GetComponent<Button>();
+
         if (isAvailable)
         {
-            GetComponent<Image>().sprite = availableSprite;
-            GetComponent<Button>().interactable = true;
-
+            if (image != null)
+                image.sprite = availableSprite;
+            if (button != null)
+                button.interactable = true;
         }
         else
         {
-            GetComponent<Image>().sprite = unAvailableSprite;
-            GetComponent<Button>().interactable = false;
+            if (image != null)
+                image.sprite = unAvailableSprite;
+            if (button != null)
+                button.interactable = false;
         }
     }
+
     private void HandleResourcesChanged()
     {
-        ObjectData objectData = DatabaseManager.Instance.databaseSO.objectsData[databaseItemID];
-
-        bool requiremtMet = true;
-
-        foreach (BuildRequirement req in objectData.requirements)
-        {
-            int have = ResourceManager.Instance.GetResourceAmount(req.resource);
-            Debug.Log($"Slot {databaseItemID}: braucht {req.amount} {req.resource}, vorhanden {have}");
-
-            if (have < req.amount)
-            {
-                requiremtMet = false;
-                break;
-            }
-        }
-
-        isAvailable = requiremtMet;
-        Debug.Log($"Slot {databaseItemID}: isAvailable = {isAvailable}");
-
+        BindResourceManager();
+        ObjectData objectData = GetObjectData();
+        isAvailable = resourceManager != null && objectData != null && resourceManager.CanAfford(objectData);
         UpdateAvailabilityUI();
+    }
+
+    private ObjectData GetObjectData()
+    {
+        if (DatabaseManager.Instance == null || DatabaseManager.Instance.databaseSO == null)
+            return null;
+
+        ObjectData objectData = DatabaseManager.Instance.databaseSO.GetObjectByID(databaseItemID);
+        return objectData != null && objectData.ID == databaseItemID && objectData.Prefab != null
+            ? objectData
+            : null;
     }
 }

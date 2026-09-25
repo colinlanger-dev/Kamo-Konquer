@@ -10,6 +10,9 @@ public class AttackControlerScript : NetworkBehaviour
     public float health = 10f;
     public float unitDamage = 2f;
     public float attackSpeed = 20f;
+    public bool isHeadquarters;
+
+    public bool IsHeadquarters => isHeadquarters;
 
     public readonly NetworkVariable<float> NetworkHealth = new(
         10f,
@@ -47,6 +50,15 @@ public class AttackControlerScript : NetworkBehaviour
     {
         if (IsSpawned && !IsServer)
             return;
+        if (ResourceManager.Instance != null && ResourceManager.Instance.IsMatchOver)
+        {
+            if (agent != null && agent.enabled && agent.isOnNavMesh)
+            {
+                agent.isStopped = true;
+                agent.ResetPath();
+            }
+            return;
+        }
         if (targetToAttack == null)
         {
             if (animator != null && animator.runtimeAnimatorController != null)
@@ -82,12 +94,18 @@ public class AttackControlerScript : NetworkBehaviour
         AttackControlerScript targetController = targetToAttack.GetComponentInParent<AttackControlerScript>();
         if (targetController != null)
             targetController.ReceiveDamage(unitDamage);
+        else
+        {
+            Constructable targetBuilding = targetToAttack.GetComponentInParent<Constructable>();
+            if (targetBuilding != null)
+                targetBuilding.ReceiveDamage(unitDamage);
+        }
         nextAttackTime = Time.time + attackSpeed;
     }
 
     public void OrderAttack(Transform targetTransform)
     {
-        if (targetTransform == null)
+        if (targetTransform == null || (ResourceManager.Instance != null && ResourceManager.Instance.IsMatchOver))
             return;
 
         NetworkObject target = targetTransform.GetComponentInParent<NetworkObject>();
@@ -123,6 +141,9 @@ public class AttackControlerScript : NetworkBehaviour
 
     private void SetTargetOnServer(NetworkObject target)
     {
+        if (ResourceManager.Instance != null && ResourceManager.Instance.IsMatchOver)
+            return;
+
         TeamManagerScript attackerTeam = TeamManagerScript.FindInParents(transform);
         TeamManagerScript targetTeam = TeamManagerScript.FindInParents(target.transform);
 
@@ -183,6 +204,9 @@ public class AttackControlerScript : NetworkBehaviour
 
     public void ReceiveDamage(float damage)
     {
+        if (damage <= 0f || (ResourceManager.Instance != null && ResourceManager.Instance.IsMatchOver))
+            return;
+
         if (!IsSpawned)
         {
             health -= damage;
@@ -196,6 +220,12 @@ public class AttackControlerScript : NetworkBehaviour
         NetworkHealth.Value = Mathf.Max(0, NetworkHealth.Value - damage);
         health = NetworkHealth.Value;
         Debug.Log($"{name} health: {health}");
+        if (health <= 0f && isHeadquarters)
+        {
+            TeamManagerScript owner = TeamManagerScript.FindInParents(transform);
+            if (owner != null)
+                ResourceManager.Instance?.ReportHeadquartersDestroyed(owner.CurrentTeam.Value);
+        }
         if (health <= 0f && NetworkObject != null && NetworkObject.IsSpawned)
             NetworkObject.Despawn(true);
     }

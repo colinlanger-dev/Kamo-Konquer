@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 6207825933611891589}
   - component: {fileID: 6341385241418760274}
   - component: {fileID: 3435557174567079971}
+  - component: {fileID: 900000000000000001}
+  - component: {fileID: 900000000000000002}
   m_Layer: 7
   m_Name: Kaserne
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,6 +53,8 @@ MonoBehaviour:
   maxLeben: 100
   spriteNormal: {fileID: -2051356918, guid: 76c0d43b46473ea40aa7c924aed631ad, type: 3}
   spriteBeschaedigt: {fileID: -1853260219, guid: 76c0d43b46473ea40aa7c924aed631ad, type: 3}
+  owningTeam: 0
+  faithIncomePerSecond: 0
 --- !u!212 &6207825933611891589
 SpriteRenderer:
   serializedVersion: 2
@@ -143,10 +147,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f5bcad2d9876b14292447846cc4b9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
-  spawnPrefab: {fileID: 579434544268795065, guid: dea3ca204f462ac42bbf3dbea2f5e22a, type: 3}
-  grid: {fileID: 0}
-  spawnInterval: 10
-  startOnAwake: 0
+  azadTankPrefab: {fileID: 579434544268795065, guid: f74a8460f8016bc4e9a75e4cffae39f7, type: 3}
+  azadRpgPrefab: {fileID: 6258828086527245589, guid: 660747c2a3bd80a4dbbc5db8354d916a, type: 3}
+  azadMinigunPrefab: {fileID: 8058987544565273260, guid: 794f268986caafc47800c12d074a144d, type: 3}
+  kamoTankPrefab: {fileID: 579434544268795065, guid: dea3ca204f462ac42bbf3dbea2f5e22a, type: 3}
+  kamoRpgPrefab: {fileID: 6258828086527245589, guid: b45dbd5eec6cb3f45b9389f387421bcd, type: 3}
+  kamoMinigunPrefab: {fileID: 8058987544565273260, guid: baaa59d7ea0c2cf48bd6e0a829c23cf5, type: 3}
+  tankCost: 100
+  rpgCost: 100
+  minigunCost: 100
+  productionSeconds: 10
+  spawnOffset: {x: 0, y: 0, z: -5}
+  navMeshSampleRadius: 3
+  navMeshFallbackRadius: 15
+--- !u!114 &900000000000000001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555125030896941773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c9ecfe1860c0b84086ff1c3db4f344b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TeamManagerScript
+  startingTeam: 0
+--- !u!114 &900000000000000002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555125030896941773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 3647421091
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  m_InScenePlacedDisabledByDefault: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  m_InScenePlaced: 0
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1001 &3202992395655080194
 PrefabInstance:
   m_ObjectHideFlags: 0

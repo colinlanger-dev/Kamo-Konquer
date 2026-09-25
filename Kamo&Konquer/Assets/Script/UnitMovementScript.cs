@@ -41,7 +41,7 @@ public class UnitMovementScript : NetworkBehaviour
 
     public void OrderMove(Vector3 destination)
     {
-        if (!isSelected)
+        if (!isSelected || (ResourceManager.Instance != null && ResourceManager.Instance.IsMatchOver))
             return;
 
         if (!IsSpawned)
@@ -59,6 +59,9 @@ public class UnitMovementScript : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     private void MoveServerRpc(Vector3 destination, ServerRpcParams rpcParams = default)
     {
+        if (ResourceManager.Instance != null && ResourceManager.Instance.IsMatchOver)
+            return;
+
         TeamManagerScript teamMember = TeamManagerScript.FindInParents(transform);
         TeamManagerScript.Team issuingTeam = TeamManagerScript.GetTeamForClient(rpcParams.Receive.SenderClientId);
         if (teamMember == null || teamMember.CurrentTeam.Value != issuingTeam)
@@ -69,7 +72,12 @@ public class UnitMovementScript : NetworkBehaviour
 
     private void ApplyMove(Vector3 destination)
     {
-        if (agent == null || !agent.enabled)
+        if ((ResourceManager.Instance != null && ResourceManager.Instance.IsMatchOver) ||
+            agent == null || !agent.enabled || !agent.isOnNavMesh)
+            return;
+
+        if (!NavMesh.SamplePosition(destination, out NavMeshHit navHit, 3f, NavMesh.AllAreas) ||
+            !agent.SetDestination(navHit.position))
             return;
 
         if (attackController != null)
@@ -83,13 +91,24 @@ public class UnitMovementScript : NetworkBehaviour
         }
 
         agent.isStopped = false;
-        agent.SetDestination(destination);
     }
 
     private void Update()
     {
         if (!IsServer && IsSpawned)
             return;
+
+        if (ResourceManager.Instance != null && ResourceManager.Instance.IsMatchOver)
+        {
+            if (agent != null && agent.enabled && agent.isOnNavMesh)
+            {
+                agent.isStopped = true;
+                if (agent.hasPath)
+                    agent.ResetPath();
+            }
+            CommandedToMove = false;
+            return;
+        }
 
         if (CommandedToMove && agent != null && agent.enabled && agent.isOnNavMesh && !agent.pathPending &&
             agent.remainingDistance <= agent.stoppingDistance + 0.1f)

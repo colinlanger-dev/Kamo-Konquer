@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class UnitSelectionManager : MonoBehaviour
 {
@@ -34,7 +35,14 @@ public class UnitSelectionManager : MonoBehaviour
 
     private void Start()
     {
-        cam = Camera.main;
+        if (cam == null)
+            cam = Camera.main;
+    }
+
+    public void SetSceneCamera(Camera camera)
+    {
+        if (camera != null)
+            cam = camera;
     }
 
     private void Update()
@@ -90,12 +98,12 @@ public class UnitSelectionManager : MonoBehaviour
         }
 
         attackCursorVisible = false;
-        if (!Physics.Raycast(ray, out RaycastHit groundHit, Mathf.Infinity, ground))
+        if (!TryGetGroundPoint(ray, out Vector3 groundPoint))
             return;
 
         if (markerInstance != null)
         {
-            markerInstance.transform.position = groundHit.point;
+            markerInstance.transform.position = groundPoint;
             markerInstance.SetActive(true);
         }
 
@@ -106,8 +114,28 @@ public class UnitSelectionManager : MonoBehaviour
 
             UnitMovementScript movement = unit.GetComponentInParent<UnitMovementScript>();
             if (movement != null)
-                movement.OrderMove(groundHit.point);
+                movement.OrderMove(groundPoint);
         }
+    }
+
+    private bool TryGetGroundPoint(Ray ray, out Vector3 groundPoint)
+    {
+        if (Physics.Raycast(ray, out RaycastHit groundHit, Mathf.Infinity, ground))
+        {
+            groundPoint = groundHit.point;
+            return true;
+        }
+
+        Plane mapPlane = new(Vector3.up, Vector3.zero);
+        if (!mapPlane.Raycast(ray, out float distance))
+        {
+            groundPoint = default;
+            return false;
+        }
+
+        groundPoint = ray.GetPoint(distance);
+        Tilemap tilemap = FindFirstObjectByType<Tilemap>();
+        return tilemap == null || tilemap.HasTile(tilemap.WorldToCell(groundPoint));
     }
 
     public void SelectUnitAtMouse(bool additive)
@@ -120,10 +148,21 @@ public class UnitSelectionManager : MonoBehaviour
         UnitScript clickedUnit = FindOwnUnitAtMouse();
         if (clickedUnit == null)
         {
+            Spawner clickedBarracks = FindOwnBarracksAtMouse();
+            if (clickedBarracks != null)
+            {
+                DeselectAll();
+                BuySystem.Instance?.ShowProductionFor(clickedBarracks);
+                return;
+            }
+
+            BuySystem.Instance?.HideProduction();
             if (!additive)
                 DeselectAll();
             return;
         }
+
+        BuySystem.Instance?.HideProduction();
 
         GameObject unit = clickedUnit.gameObject;
         if (additive && unitsSelected.Contains(unit))
@@ -159,6 +198,30 @@ public class UnitSelectionManager : MonoBehaviour
         return null;
     }
 
+    private Spawner FindOwnBarracksAtMouse()
+    {
+        int ownLayer = GetLayerForTeam(TeamManagerScript.LocalTeam);
+        if (ownLayer < 0)
+            return null;
+
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit[] hits = Physics.RaycastAll(ray, Mathf.Infinity, 1 << ownLayer, QueryTriggerInteraction.Collide);
+        System.Array.Sort(hits, (a, b) => a.distance.CompareTo(b.distance));
+
+        foreach (RaycastHit hit in hits)
+        {
+            Spawner spawner = hit.collider.GetComponentInParent<Spawner>();
+            TeamManagerScript team = spawner != null
+                ? TeamManagerScript.FindInParents(spawner.transform)
+                : null;
+            if (spawner != null && team != null && team.IsSpawned &&
+                team.CurrentTeam.Value == TeamManagerScript.LocalTeam && spawner.CanProduce)
+                return spawner;
+        }
+
+        return null;
+    }
+
     private Transform FindAttackTarget(Ray ray)
     {
         TeamManagerScript.Team enemyTeam = GetEnemyTeam(TeamManagerScript.LocalTeam);
@@ -174,6 +237,10 @@ public class UnitSelectionManager : MonoBehaviour
             AttackControlerScript controller = hit.collider.GetComponentInParent<AttackControlerScript>();
             if (controller != null)
                 return controller.transform;
+
+            Constructable building = hit.collider.GetComponentInParent<Constructable>();
+            if (building != null)
+                return building.transform;
         }
 
         return null;

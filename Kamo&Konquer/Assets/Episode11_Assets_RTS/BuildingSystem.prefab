@@ -136,7 +136,7 @@ MonoBehaviour:
   sceneCamera: {fileID: 0}
   placementLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   lastPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &2436717161877266122
 GameObject:
@@ -183,8 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   previewYOffset: 0
-  previewMaterialPrefab: {fileID: 2100000, guid: f7de1bb20dec77544a4dd70157092435,
-    type: 2}
+  previewMaterialPrefab: {fileID: 2100000, guid: f7de1bb20dec77544a4dd70157092435, type: 2}
 --- !u!1 &4124421191558080185
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +258,7 @@ Transform:
   m_GameObject: {fileID: 4848590144349182691}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

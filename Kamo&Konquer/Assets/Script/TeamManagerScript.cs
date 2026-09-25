@@ -47,6 +47,14 @@ public class TeamManagerScript : NetworkBehaviour
             CurrentTeam.Value = team;
     }
 
+    public void SetStartingTeam(Team team)
+    {
+        startingTeam = team;
+        if (IsServer && IsSpawned)
+            CurrentTeam.Value = team;
+        ApplyTeamLayer(gameObject, team);
+    }
+
     private void OnCurrentTeamChanged(Team previousTeam, Team newTeam)
     {
         ApplyTeamLayer(newTeam);
@@ -54,11 +62,17 @@ public class TeamManagerScript : NetworkBehaviour
 
     private void ApplyTeamLayer(Team team)
     {
-        int teamLayer = UnitSelectionManager.GetLayerForTeam(team);
-        if (teamLayer < 0)
+        ApplyTeamLayer(gameObject, team);
+    }
+
+    public static void ApplyTeamLayer(GameObject target, Team team)
+    {
+        if (target == null)
             return;
 
-        SetLayerRecursively(transform, teamLayer);
+        int teamLayer = UnitSelectionManager.GetLayerForTeam(team);
+        if (teamLayer >= 0)
+            SetLayerRecursively(target.transform, teamLayer);
     }
 
     private static void SetLayerRecursively(Transform root, int layer)
